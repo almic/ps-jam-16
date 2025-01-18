@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dvmlvxy1jea3e"]
+
+[ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="1_xqwne"]
+[ext_resource type="Texture2D" uid="uid://duh8tngr75my2" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Normal.png.PNG" id="2_pjxld"]
+
+[resource]
+resource_name = "Rock_01_03_Diffuse"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_xqwne")
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("2_pjxld")

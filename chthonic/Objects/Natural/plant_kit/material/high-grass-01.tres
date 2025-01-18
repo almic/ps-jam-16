@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://oc1or2a24jrk"]
+
+[ext_resource type="Texture2D" uid="uid://chyf80j62p3k0" path="res://Objects/Natural/plant_kit/texture/high-grass-01.png" id="1_w23af"]
+
+[resource]
+resource_name = "high-grass-1-01"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_w23af")

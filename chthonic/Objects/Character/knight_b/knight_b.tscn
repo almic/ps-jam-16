@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5jgtrh8yhjls"]
+
+[ext_resource type="PackedScene" uid="uid://c1vx2uvevx6ka" path="res://Objects/Character/knight_b/model/Soi_Armour_A.fbx" id="1_rrdn6"]
+
+[node name="Soi_Armour_A" instance=ExtResource("1_rrdn6")]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://6jpu24ywiywf"]
+
+[ext_resource type="Texture2D" uid="uid://bf6x2bvkw0so7" path="res://Objects/Natural/plant_kit/texture/clover-01.png" id="1_3og8i"]
+
+[resource]
+resource_name = "clover-01"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_3og8i")

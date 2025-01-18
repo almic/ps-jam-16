@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=4 uid="uid://un3ianuwttsg"]
+
+[ext_resource type="Material" uid="uid://wnyoh2cq33ma" path="res://Objects/Natural/plant_kit/material/clover-04.tres" id="1_pnh46"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bfshe"]
+_surfaces = [{
+"aabb": AABB(-0.00838585, -0.00765118, 6.65807e-05, 0.0160858, 0.0160858, 0.00111887),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAwAAAAQAAgAEAAAAAQAAAAMA"),
+"name": "clover-04",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("SM2zOkhhzbocYZs67E/8O3ExCjw9oYs47E/8O7i2+rs9oYs4zWQJvHExCjw9oYs4zWQJvLi2+rs9oYs4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t4smq"]
+resource_name = "Plane_578"
+_surfaces = [{
+"aabb": AABB(-0.00838585, -0.00765118, 6.65807e-05, 0.0160858, 0.0160858, 0.00111887),
+"attribute_data": PackedByteArray("R6jBPg1KGz8AAIA/AACAPwAAAAAAAIA/AACAPwAAAABHqME+DUobPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAEeowT4NShs/AACAPwAAgD9HqME+DUobPwAAgD8AAAAA"),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsA"),
+"material": ExtResource("1_pnh46"),
+"name": "clover-04",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("SM2zOkhhzbocYZs67E/8O3ExCjw9oYs47E/8O7i2+rs9oYs4zWQJvHExCjw9oYs4SM2zOkhhzbocYZs6zWQJvLi2+rs9oYs47E/8O7i2+rs9oYs4zWQJvLi2+rs9oYs4SM2zOkhhzbocYZs67E/8O3ExCjw9oYs4SM2zOkhhzbocYZs6zWQJvHExCjw9oYs4OpP/f/9///86k/9//3///zqT/3//f///1HL/f/9////Ucv9//3///9Ry/3//f////38dbP9/Dvb/fx1s/38O9v9/HWz/fw72/3/gjB5z////f+CMHnP///9/4Iwec///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bfshe")
+
+[node name="Clover-04" type="Node3D"]
+
+[node name="Clover-04" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_t4smq")
+skeleton = NodePath("")

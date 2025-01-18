@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=4 uid="uid://la8ps0tdvjp4"]
+
+[ext_resource type="Material" uid="uid://byu7ic517q0jr" path="res://Objects/Natural/plant_kit/material/flowers-02.tres" id="1_g4fm6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k0542"]
+_surfaces = [{
+"aabb": AABB(-0.00796919, -0.00778661, 0.000163785, 0.0160858, 0.0160858, 0.00157774),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACwAFAAAAAAADAAsACQAEAAwADAAKAAkABgAFAAsAAAAFAAQABAAJAAAADQAMAAQABAAHAA0AAQAAAAkACQAIAAEA"),
+"lods": [0.00157952, PackedByteArray("AwABAAIAAQADAAoACgAIAAEADAAKAAMAAwAGAAwACwAGAAMABgAHAAwADAAHAA0A")],
+"name": "flowers-01.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("KSx3u/aQJLtuXX46caE0u80m/7vPvSs5M5ECvM0m/7vPvSs5M5ECvEhpHbvPvSs5KWg3O49+aztaQ9Q511tRu9cjNzvSQ+Q6mm1hu2b5BzzPvSs5H1VBO2b5BzzPvSs5APJPO80m/7vPvSs5Cut4O+G+cLvmm1M6j/sEPK4DX7vPvSs5M5ECvNdTSjvPvSs5j/sEPIULgDrPvSs5j/sEPGb5BzzPvSs5")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lyajv"]
+resource_name = "Plane_164"
+_surfaces = [{
+"aabb": AABB(-0.00796919, -0.00778661, 0.000163785, 0.0160858, 0.0160858, 0.00157774),
+"attribute_data": PackedByteArray("tZuFProKLD8M7aU+AACAPwAAAAAAAIA/AAAAAOtNKj+HXSs/psiVPiT5lz4ANq8+MCuQPgAAAACJxi0/AAAAAPhSMT8AAIA/HUY7P4aKPj8AAIA/Qzw6PwAAAABi5KU+JPmXPgA2rz61m4U+ugosPwAAAADrTSo/HUY7P4aKPj+HXSs/psiVPgAAgD9SEOk+AACAP0M8Oj8wK5A+AAAAACT5lz4ANq8+AAAAAGLkpT61m4U+ugosPyT5lz4ANq8+h10rP6bIlT4dRjs/hoo+PwAAgD8AAAAAAACAP1IQ6T6HXSs/psiVPonGLT8AAAAADO2lPgAAgD+1m4U+ugosPx1GOz+Gij4/+FIxPwAAgD8="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACwAMAA0ADQAOAAsADwAQABEAEQASAA8AEwAUABUAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4A"),
+"lods": [0.00157952, PackedByteArray("AwABAAIAAQADAAoACgAIAAEAEQAKAAMAAwAGABEACwAGAAMABgAHABEAEQAHABoA")],
+"material": ExtResource("1_g4fm6"),
+"name": "flowers-01.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("KSx3u/aQJLtuXX46caE0u80m/7vPvSs5M5ECvM0m/7vPvSs5M5ECvEhpHbvPvSs5KWg3O49+aztaQ9Q511tRu9cjNzvSQ+Q6mm1hu2b5BzzPvSs5H1VBO2b5BzzPvSs5APJPO80m/7vPvSs5Cut4O+G+cLvmm1M6j/sEPK4DX7vPvSs5M5ECvNdTSjvPvSs511tRu9cjNzvSQ+Q6KSx3u/aQJLtuXX46M5ECvEhpHbvPvSs5Cut4O+G+cLvmm1M6KWg3O49+aztaQ9Q5j/sEPIULgDrPvSs5j/sEPK4DX7vPvSs5mm1hu2b5BzzPvSs511tRu9cjNzvSQ+Q6M5ECvNdTSjvPvSs5KSx3u/aQJLtuXX4611tRu9cjNzvSQ+Q6KWg3O49+aztaQ9Q5Cut4O+G+cLvmm1M6j/sEPGb5BzzPvSs5j/sEPIULgDrPvSs5KWg3O49+aztaQ9Q5H1VBO2b5BzzPvSs5caE0u80m/7vPvSs5KSx3u/aQJLtuXX46Cut4O+G+cLvmm1M6APJPO80m/7vPvSs5hXbSdqv1DsCFdtJ2EvWTv4V20na+9fi/hXbSdsf0gMCsifaRvf9GuqyJ9pFI/ovGrIn2kcv/u8WsifaREf6muUyPvW7+/9fITI+9bv7/18hMj71u/v/XyBZme3rl5ALAFmZ7ep7kLcAWZnt64eT4vxZme3qc5Mq/bovWhPT/9cVui9aE3/8Aum6L1oT8//HFbovWhMP/DMavZv+VbeH/v69m/5Vt4f+/r2b/lW3h/79ijBt98v+juWKMG32b/3q5Yowbffv/p7lijBt9w/9vxmiDZ4L8/0G+aINngvT/wcFog2eC/v9CvmiDZ4Lt/zq+3H/jbtb//7/cf+Nu0v8BwNx/427V//6/3H/jbtH//L8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k0542")
+
+[node name="Flowers-03" type="Node3D"]
+
+[node name="Flowers-03" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_lyajv")
+skeleton = NodePath("")

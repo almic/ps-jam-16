@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=4 uid="uid://b84gllekn07t5"]
+
+[ext_resource type="Material" uid="uid://cvjoukp71vj8c" path="res://Objects/Natural/plant_kit/material/flowers-01.tres" id="1_pessc"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xrc6g"]
+_surfaces = [{
+"aabb": AABB(-0.0079569, -0.00774393, 0.000163785, 0.0160858, 0.0160858, 0.000962081),
+"format": 34359742465,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwABAAgACAAJAAcABQAAAAoACgAGAAUAAgABAAcACAABAAAAAAAFAAgACgAAAAMACwAIAAUABQAEAAsACAALAAkA"),
+"lods": [0.000946597, PackedByteArray("CgAJAAIAAgADAAoAAgAJAAcACgAGAAkACwAJAAYABgAEAAsA")],
+"name": "flowers-01.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("XDY4O49KbjvQZAE6ro1Qu9fvOTuf+WQ6cZ9gu2asCDzPvSs5UiNCO2asCDzPvSs5M8BQO83A/bvPvSs5M7l5O+HybbvPkZM6HC8FPK43XLvPvSs5rF0CvNcfTTvPvSs59l12u/bEIbuIivk5rF0CvEidGrvPvSs5HC8FPIWjhTrPvSs5UtMzu83A/bvPvSs5")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t2dya"]
+resource_name = "Plane_163"
+_surfaces = [{
+"aabb": AABB(-0.0079569, -0.00774393, 0.000163785, 0.0160858, 0.0160858, 0.000962081),
+"attribute_data": PackedByteArray("h10rP6bIlT4k+Zc+ADavPjArkD4AAAAAicYtPwAAAAD4UjE/AACAPx1GOz+Gij4/AACAP0M8Oj8AAAAAYuSlPiT5lz4ANq8+tZuFProKLD8AAAAA600qPx1GOz+Gij4/h10rP6bIlT4AAIA/nGLSPgAAgD9DPDo/MCuQPgAAAAAk+Zc+ADavPgAAAABi5KU+tZuFProKLD8k+Zc+ADavPoddKz+myJU+HUY7P4aKPj8AAIA/nGLSPoddKz+myJU+icYtPwAAAAAM7aU+AACAP7WbhT66Ciw/HUY7P4aKPj/4UjE/AACAP7WbhT66Ciw/DO2lPgAAgD8AAAAA600qPw=="),
+"format": 34359742487,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAIAAkACQAKAAcACwAMAA0ADQAOAAsADwAQABEAEgATABQAFAAVABIAFgAXABgAGQAaABsAGwAcABkAHQAeAB8A"),
+"lods": [0.000946597, PackedByteArray("DQAKAAIAAgADAA0AAgAKAAcADQAGAAoAGQAKAAYABgAEABkA")],
+"material": ExtResource("1_pessc"),
+"name": "flowers-01.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("XDY4O49KbjvQZAE6ro1Qu9fvOTuf+WQ6cZ9gu2asCDzPvSs5UiNCO2asCDzPvSs5M8BQO83A/bvPvSs5M7l5O+HybbvPkZM6HC8FPK43XLvPvSs5rF0CvNcfTTvPvSs5ro1Qu9fvOTuf+WQ69l12u/bEIbuIivk5rF0CvEidGrvPvSs5M7l5O+HybbvPkZM6XDY4O49KbjvQZAE6HC8FPIWjhTrPvSs5HC8FPK43XLvPvSs5cZ9gu2asCDzPvSs5ro1Qu9fvOTuf+WQ6rF0CvNcfTTvPvSs59l12u/bEIbuIivk5ro1Qu9fvOTuf+WQ6XDY4O49KbjvQZAE6M7l5O+HybbvPkZM6HC8FPIWjhTrPvSs5XDY4O49KbjvQZAE6UiNCO2asCDzPvSs5UtMzu83A/bvPvSs59l12u/bEIbuIivk5M7l5O+HybbvPkZM6M8BQO83A/bvPvSs59l12u/bEIbuIivk5UtMzu83A/bvPvSs5rF0CvEidGrvPvSs5vIKYi/T/eL68gpiLuP+mwbyCmIv3/4TBvIKYi7H/W75RlBVp/v9fzFGUFWn+/1/MUZQVaf7/X8wfc5J8wfIAwB9zknym8g/AH3OSfMDy/L8fc5J8pPLtv8+PD4dy+JG0z48Ph5fxyrHPjw+HHPcGtM+PD4eI/gvJtHFrjCrw/7+0cWuMKvD/v7Rxa4wq8P+/mX04goj9AsCZfTiCWv0awJl9OIKM/QDAmX04gm/97792imGHFfKEtHaKYYcV8oS0dophhxXyhLSVeTtxo/gLwJV5O3EW+E3AlXk7cYn43r+VeTtx8/eCv4F3x3fs9v+/gXfHd+z2/7+Bd8d37Pb/vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xrc6g")
+
+[node name="Flowers-01" type="Node3D"]
+
+[node name="Flowers-01" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_t2dya")
+skeleton = NodePath("")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=4 uid="uid://dc7qxg5wmbgr7"]
+
+[ext_resource type="Material" uid="uid://6jpu24ywiywf" path="res://Objects/Natural/plant_kit/material/clover-01.tres" id="1_fmo4k"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ex6cm"]
+_surfaces = [{
+"aabb": AABB(-0.00757521, -0.00825473, -0.000114668, 0.0160858, 0.0160858, 0.000688008),
+"format": 34359742465,
+"index_count": 15,
+"index_data": PackedByteArray("AAABAAIAAwABAAQABQAEAAEAAQAAAAUAAgABAAMA"),
+"lods": [0.000983139, PackedByteArray("AAAEAAIAAgAEAAMABAAAAAUA")],
+"name": "clover-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("dDn4u/ZNADztefC45Ek7um5WQzozTBY6dDn4u9Y+B7ztefC4DXALPNY+B7ztefC4DXALPHJv/DvtefC4DXALPPZNADztefC4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_50mfg"]
+resource_name = "Plane_575"
+_surfaces = [{
+"aabb": AABB(-0.00757521, -0.00825473, -0.000114668, 0.0160858, 0.0160858, 0.000688008),
+"attribute_data": PackedByteArray("AACAPwAAAADfOg8/hF/aPgAAAAAAAAAAAAAAAAAAgD/fOg8/hF/aPhf5fT8AAIA/AACAPwAAgD8X+X0/AACAP986Dz+EX9o+AACAPwAAAAAAAAAAAAAAAN86Dz+EX9o+AAAAAAAAgD8="),
+"format": 34359742487,
+"index_count": 15,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACAAJAAYACgALAAwA"),
+"lods": [0.000983139, PackedByteArray("AAAFAAIAAgAFAAMABQAAAAYA")],
+"material": ExtResource("1_fmo4k"),
+"name": "clover-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("dDn4u/ZNADztefC45Ek7um5WQzozTBY6dDn4u9Y+B7ztefC4DXALPNY+B7ztefC45Ek7um5WQzozTBY6DXALPHJv/DvtefC4DXALPPZNADztefC4DXALPHJv/DvtefC45Ek7um5WQzozTBY6dDn4u/ZNADztefC4dDn4u9Y+B7ztefC45Ek7um5WQzozTBY6DXALPNY+B7ztefC4VXT/f/9///9VdP9//3///1V0/3//f///4Yj/f/9////hiP9//3///+GI/3//f///FoA2i8V0/v8WgDaLxHT9/xaANos4i/7/FoA2iziL/v//f+h2/39z+/9/6Hb/f3P7/3/odv9/c/s=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ex6cm")
+
+[node name="Clover-01" type="Node3D"]
+
+[node name="Clover-01" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_50mfg")
+skeleton = NodePath("")

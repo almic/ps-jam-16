@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dl5fyslhqfc3i"]
+
+[ext_resource type="Texture2D" uid="uid://dt3xpielm3fbs" path="res://Objects/Natural/plant_kit/texture/shrubbery-1-02.png" id="1_6p118"]
+
+[resource]
+resource_name = "shrubbery-1-02"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_6p118")

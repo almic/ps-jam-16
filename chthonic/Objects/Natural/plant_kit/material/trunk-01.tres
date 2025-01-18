@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dh5qwnc10lyix"]
+
+[ext_resource type="Texture2D" uid="uid://u8t03xvcvxl6" path="res://Objects/Natural/plant_kit/texture/trunk-01.png" id="1_kmi7p"]
+
+[resource]
+resource_name = "trunk-01"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_kmi7p")

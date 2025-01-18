@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://y8b67qibawoj"]
+
+[ext_resource type="Texture2D" uid="uid://dxqwkjiu2c1mp" path="res://Objects/Natural/plant_kit/texture/branch-1-01.png" id="1_0nftl"]
+
+[resource]
+resource_name = "branch-1-01"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_0nftl")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvxh6e42hpqht"]
+
+[ext_resource type="PackedScene" uid="uid://rr56ysocydh7" path="res://Objects/Natural/climbing_rock/model/climbing_rock_low.fbx" id="1_gkfkp"]
+
+[node name="climbing_rock_low" instance=ExtResource("1_gkfkp")]
+
+[node name="Rock_Low" parent="." index="0"]
+transform = Transform3D(8, 0, 0, 0, 8, 6.03983e-07, 0, -6.03983e-07, 8, 0, 0, 0)

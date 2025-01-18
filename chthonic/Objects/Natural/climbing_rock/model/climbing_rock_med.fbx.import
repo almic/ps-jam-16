@@ -1,0 +1,60 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://fwicog23ejn8"
+path="res://.godot/imported/climbing_rock_med.fbx-3b3fe1a5ae571ee3fa75aec1976ed03d.scn"
+
+[deps]
+
+source_file="res://Objects/Natural/climbing_rock/model/climbing_rock_med.fbx"
+dest_files=["res://.godot/imported/climbing_rock_med.fbx-3b3fe1a5ae571ee3fa75aec1976ed03d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Rock_01_01_Diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Natural/climbing_rock/material/Rock_01_01_Diffuse.tres"
+},
+"Rock_01_02_Diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Natural/climbing_rock/material/Rock_01_02_Diffuse.tres"
+},
+"Rock_01_03_Diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Natural/climbing_rock/material/Rock_01_03_Diffuse.tres"
+},
+"Rock_01_04_Diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Natural/climbing_rock/material/Rock_01_04_Diffuse.tres"
+},
+"Rock_01_05_Diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Natural/climbing_rock/material/Rock_01_05_Diffuse.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
