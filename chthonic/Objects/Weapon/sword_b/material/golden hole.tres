@@ -12,7 +12,6 @@ albedo_texture = ExtResource("1_1vvpn")
 metallic = 1.0
 roughness_texture = ExtResource("4_c8f4m")
 roughness_texture_channel = 4
-emission_enabled = true
 normal_enabled = true
 normal_texture = ExtResource("3_w8oul")
 heightmap_enabled = true
