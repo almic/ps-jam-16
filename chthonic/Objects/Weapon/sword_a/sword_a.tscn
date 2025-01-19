@@ -4,6 +4,8 @@
 [ext_resource type="Material" uid="uid://b0f0tp43e6wt8" path="res://Objects/Weapon/sword_a/material/sword.tres" id="2_dikxw"]
 
 [node name="SwordLow_01" instance=ExtResource("1_18pry")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="SwordLow" parent="." index="0"]
+transform = Transform3D(7, 0, 0, 0, -3.02483e-07, 7.062, 0, -6.92, -3.0869e-07, -2.82285e-09, -0.324579, 0)
 material_override = ExtResource("2_dikxw")
