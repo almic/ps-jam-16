@@ -1,0 +1,84 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cbfp8gukjybqq"
+path="res://.godot/imported/castle_kit.fbx-dec2726cd25292137813c552fd95ae4a.scn"
+
+[deps]
+
+source_file="res://Objects/Structure/castle/model/castle_kit.fbx"
+dest_files=["res://.godot/imported/castle_kit.fbx-dec2726cd25292137813c552fd95ae4a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"bar metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/bar metal.tres"
+},
+"black": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/black.tres"
+},
+"door": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/door.tres"
+},
+"door metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/door metal.tres"
+},
+"door stone": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/door stone.tres"
+},
+"handle metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/handle metal.tres"
+},
+"ladder": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/ladder.tres"
+},
+"light": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/light.tres"
+},
+"light metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/light metal.tres"
+},
+"roof": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/roof.tres"
+},
+"wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Structure/castle/material/wall.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

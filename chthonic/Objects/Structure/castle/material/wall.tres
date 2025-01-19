@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://crx4yva0v3brr"]
+
+[ext_resource type="Texture2D" uid="uid://kyphlhg1h5ic" path="res://Objects/Structure/castle/texture/rough_block_wall_diff_4k.jpg.PNG" id="1_oqaoh"]
+[ext_resource type="Texture2D" uid="uid://b58hx3jgmpxaa" path="res://Objects/Structure/castle/texture/rough_block_wall_nor_gl_4k.exr.PNG" id="2_o2xpt"]
+[ext_resource type="Texture2D" uid="uid://bs7gejhptcr0l" path="res://Objects/Structure/castle/texture/rough_block_wall_rough_4k.jpg.PNG" id="3_3a1pi"]
+
+[resource]
+resource_name = "wall"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.633757, 0.633757, 0.633757, 1)
+albedo_texture = ExtResource("1_oqaoh")
+roughness_texture = ExtResource("3_3a1pi")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_o2xpt")

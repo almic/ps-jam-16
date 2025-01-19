@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cv881jo183r3b"]
+
+[ext_resource type="Texture2D" uid="uid://fkyyu66scby2" path="res://Objects/Structure/castle/texture/stone_wall_diff_4k.jpg.PNG" id="1_poe3v"]
+[ext_resource type="Texture2D" uid="uid://cd5l1hhubjfmk" path="res://Objects/Structure/castle/texture/stone_wall_nor_gl_4k.exr.PNG" id="2_7vrau"]
+[ext_resource type="Texture2D" uid="uid://dy2t21w7vxqnv" path="res://Objects/Structure/castle/texture/stone_wall_rough_4k.exr.PNG" id="3_vwmui"]
+
+[resource]
+resource_name = "roof"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.548963, 0.548963, 0.548962, 1)
+albedo_texture = ExtResource("1_poe3v")
+roughness_texture = ExtResource("3_vwmui")
+normal_enabled = true
+normal_texture = ExtResource("2_7vrau")

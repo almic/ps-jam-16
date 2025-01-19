@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crbgfy64wogvw"]
+
+[resource]
+resource_name = "door metal"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.262932, 0.262932, 0.262932, 1)
+metallic = 1.0
+roughness = 0.9
