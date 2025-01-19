@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b0f0tp43e6wt8"]
+
+[ext_resource type="Texture2D" uid="uid://np1yp7qc1d2y" path="res://Objects/Weapon/sword_a/texture/1k_Diffuse.jpg" id="1_tkwva"]
+[ext_resource type="Texture2D" uid="uid://mavd6l71s8n4" path="res://Objects/Weapon/sword_a/texture/1k_Metalness.jpg" id="2_oofsg"]
+[ext_resource type="Texture2D" uid="uid://cvyotqnsoxsuu" path="res://Objects/Weapon/sword_a/texture/1k_Normal.jpg" id="3_lws80"]
+[ext_resource type="Texture2D" uid="uid://ckvxmarmr1ng7" path="res://Objects/Weapon/sword_a/texture/1k_Roughness.jpg" id="4_kqm45"]
+
+[resource]
+albedo_texture = ExtResource("1_tkwva")
+metallic = 1.0
+metallic_texture = ExtResource("2_oofsg")
+metallic_texture_channel = 4
+roughness = 0.5
+roughness_texture = ExtResource("4_kqm45")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("3_lws80")

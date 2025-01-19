@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm36853xoe7ky"]
+
+[ext_resource type="PackedScene" uid="uid://bk1t7ajhk1ump" path="res://Objects/Weapon/sword_a/model/SwordLow_01.fbx" id="1_18pry"]
+[ext_resource type="Material" uid="uid://b0f0tp43e6wt8" path="res://Objects/Weapon/sword_a/material/sword.tres" id="2_dikxw"]
+
+[node name="SwordLow_01" instance=ExtResource("1_18pry")]
+
+[node name="SwordLow" parent="." index="0"]
+material_override = ExtResource("2_dikxw")
