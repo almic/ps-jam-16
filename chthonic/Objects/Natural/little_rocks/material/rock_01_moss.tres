@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ba0pr4glhi7t1"]
+
+[ext_resource type="Texture2D" uid="uid://conu5mq6cvlh5" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_01_GreenMoss_BaseColor.png.PNG" id="1_e20m5"]
+[ext_resource type="Texture2D" uid="uid://3qca15n510v3" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_01_GreenMoss_Normal.png.PNG" id="2_klppr"]
+
+[resource]
+albedo_texture = ExtResource("1_e20m5")
+normal_enabled = true
+normal_texture = ExtResource("2_klppr")

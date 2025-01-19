@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bs5ly7pv3nko3"]
+
+[ext_resource type="Texture2D" uid="uid://et86o5rpt5kg" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_05_BaseColor.png.PNG" id="1_31d3g"]
+[ext_resource type="Texture2D" uid="uid://drcfwobvyh06" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_05_Normal.png.PNG" id="2_ibtni"]
+
+[resource]
+albedo_texture = ExtResource("1_31d3g")
+normal_enabled = true
+normal_texture = ExtResource("2_ibtni")

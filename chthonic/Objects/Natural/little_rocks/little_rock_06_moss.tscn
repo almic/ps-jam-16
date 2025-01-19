@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://fbvok57nfyxy"]
+
+[ext_resource type="PackedScene" uid="uid://bgfk1el87ifle" path="res://Objects/Natural/little_rocks/model/SM_LittleRock_06.fbx" id="1_iuxu2"]
+[ext_resource type="Material" uid="uid://0ayln5vfw13n" path="res://Objects/Natural/little_rocks/material/rock_06_moss.tres" id="2_2na38"]
+
+[node name="LittleRock06Moss" instance=ExtResource("1_iuxu2")]
+
+[node name="SM_LittleRock_06" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_2na38")
