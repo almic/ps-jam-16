@@ -9,3 +9,7 @@ This is on Google Drive, [PS Jam 16](https://docs.google.com/document/d/1il6KwNV
 ## Task Board
 
 Link to the [Task Board](https://github.com/users/almic/projects/4/views/1)
+
+# Additional Docs
+
+[Combat interaction tables](https://docs.google.com/spreadsheets/d/10j5jn1_szdFXvW9YXuVjxtYHwDMX63kwmZ-YwjFF27o/edit?usp=sharing)
