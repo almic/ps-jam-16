@@ -1,0 +1,64 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://4nmtwa3gawaq"
+path="res://.godot/imported/silver_sword_low_poly.fbx-0d0c29d291638d99d51d8ed3fd225032.scn"
+
+[deps]
+
+source_file="res://Objects/Weapon/sword_b/model/silver_sword_low_poly.fbx"
+dest_files=["res://.godot/imported/silver_sword_low_poly.fbx-0d0c29d291638d99d51d8ed3fd225032.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"blade": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/blade.tres"
+},
+"gard": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/gard.tres"
+},
+"golden hole": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/golden hole.tres"
+},
+"handle_ring": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/handle_ring.tres"
+},
+"leather_handle": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/leather_handle.tres"
+},
+"pommel_handle": {
+"use_external/enabled": true,
+"use_external/path": "res://Objects/Weapon/sword_b/material/pommel_handle.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

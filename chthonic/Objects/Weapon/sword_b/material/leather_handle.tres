@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ctdhc1bn0gjff"]
+
+[ext_resource type="Texture2D" uid="uid://u461gfyc5nxy" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_leather_handle_BaseColor.png.PNG" id="1_765m8"]
+[ext_resource type="Texture2D" uid="uid://dhhwbvivro7sd" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_leather_handle_Height.png.PNG" id="2_mbyh5"]
+[ext_resource type="Texture2D" uid="uid://dvgl26tdk6qrt" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_leather_handle_Normal.png.PNG" id="3_xjxt3"]
+[ext_resource type="Texture2D" uid="uid://c2hbm200jjxx0" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_leather_handle_Roughness.png.PNG" id="4_ugt5j"]
+
+[resource]
+resource_name = "leather_handle"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_765m8")
+roughness_texture = ExtResource("4_ugt5j")
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_xjxt3")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_mbyh5")

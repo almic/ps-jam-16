@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://weaxiykwptv1"]
+
+[ext_resource type="Texture2D" uid="uid://dro4lfrbg0jj" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_golden hole_BaseColor.png.PNG" id="1_1vvpn"]
+[ext_resource type="Texture2D" uid="uid://12ijqk1bedks" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_golden hole_Height.png.PNG" id="2_b6aaj"]
+[ext_resource type="Texture2D" uid="uid://bxrrsxdi1fq7s" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_golden hole_Normal.png.PNG" id="3_w8oul"]
+[ext_resource type="Texture2D" uid="uid://comrk74jwin8e" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_golden hole_Roughness.png.PNG" id="4_c8f4m"]
+
+[resource]
+resource_name = "golden hole"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1vvpn")
+metallic = 1.0
+roughness_texture = ExtResource("4_c8f4m")
+roughness_texture_channel = 4
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_w8oul")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_b6aaj")

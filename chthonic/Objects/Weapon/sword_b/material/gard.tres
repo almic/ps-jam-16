@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bvkb2fiupqke2"]
+
+[ext_resource type="Texture2D" uid="uid://jbuk640rm2lf" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_gard_BaseColor.png.PNG" id="1_uab78"]
+[ext_resource type="Texture2D" uid="uid://x0cx8qu1qkcf" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_gard_Normal.png.PNG" id="2_dxucy"]
+[ext_resource type="Texture2D" uid="uid://bpicmavxwhqk1" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_gard_Roughness.png.PNG" id="3_rodfc"]
+
+[resource]
+resource_name = "gard"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_uab78")
+metallic = 1.0
+roughness_texture = ExtResource("3_rodfc")
+normal_enabled = true
+normal_texture = ExtResource("2_dxucy")

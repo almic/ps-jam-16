@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dk0hgo5jsj66v"]
+
+[ext_resource type="Texture2D" uid="uid://d1adcp25moj78" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_handle_ring_BaseColor.png.PNG" id="1_jeudo"]
+[ext_resource type="Texture2D" uid="uid://dmsl34dopkc4k" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_handle_ring_Metallic.png.PNG" id="2_uah2o"]
+[ext_resource type="Texture2D" uid="uid://fdp7i84k5xrm" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_handle_ring_Normal.png.PNG" id="3_imted"]
+[ext_resource type="Texture2D" uid="uid://cr1ly68hfrp4u" path="res://Objects/Weapon/sword_b/texture/silver_sword_low_poly_handle_ring_Roughness.png.PNG" id="4_dhgh8"]
+
+[resource]
+resource_name = "handle_ring"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_jeudo")
+metallic = 1.0
+metallic_texture = ExtResource("2_uah2o")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_dhgh8")
+normal_enabled = true
+normal_texture = ExtResource("3_imted")
