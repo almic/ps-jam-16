@@ -1,3 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5f840bpp6gem"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b5f840bpp6gem"]
+
+[ext_resource type="Texture2D" uid="uid://bylx63njg5ikv" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_01_BaseColor.png.PNG" id="1_wkt76"]
+[ext_resource type="Texture2D" uid="uid://b3fb2h6o1tiuk" path="res://Objects/Natural/little_rocks/texture/T_LittleRock_01_Normal.png.PNG" id="2_fp70p"]
 
 [resource]
+albedo_texture = ExtResource("1_wkt76")
+normal_enabled = true
+normal_texture = ExtResource("2_fp70p")
