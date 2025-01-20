@@ -14,6 +14,14 @@ config/name="Chthonic"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GUIDE="*res://addons/guide/guide.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/guide/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
