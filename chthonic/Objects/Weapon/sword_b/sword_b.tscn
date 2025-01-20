@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn0ifisvjfypt"]
+[gd_scene load_steps=4 format=3 uid="uid://cdal5w0ruhvi8"]
 
-[ext_resource type="PackedScene" uid="uid://4nmtwa3gawaq" path="res://Objects/Weapon/sword_b/model/silver_sword_low_poly.fbx" id="1_n7r7h"]
+[ext_resource type="PackedScene" uid="uid://cn0ifisvjfypt" path="res://Objects/Weapon/sword_b/silver_sword_low_poly.tscn" id="1_hnr8b"]
+[ext_resource type="Script" path="res://Items/Sword/sword_item.gd" id="1_ldc8a"]
 
-[node name="silver_sword_low_poly" instance=ExtResource("1_n7r7h")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6jm7"]
+size = Vector3(1.972, 0.38, 0.07)
 
-[node name="sword" parent="." index="0"]
-transform = Transform3D(2.715, 0, 0, 0, -1.18676e-07, 2.715, 0, -2.715, -1.18676e-07, -1.57, 0, 0)
+[node name="SwordB" type="CharacterBody3D"]
+script = ExtResource("1_ldc8a")
+
+[node name="silver_sword_low_poly" parent="." instance=ExtResource("1_hnr8b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636066, 0, 0)
+shape = SubResource("BoxShape3D_e6jm7")

@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm36853xoe7ky"]
+[gd_scene load_steps=4 format=3 uid="uid://21xsmkoqv5gp"]
 
-[ext_resource type="PackedScene" uid="uid://bk1t7ajhk1ump" path="res://Objects/Weapon/sword_a/model/SwordLow_01.fbx" id="1_18pry"]
-[ext_resource type="Material" uid="uid://b0f0tp43e6wt8" path="res://Objects/Weapon/sword_a/material/sword.tres" id="2_dikxw"]
+[ext_resource type="PackedScene" uid="uid://dq8u3a1xsixt" path="res://Objects/Weapon/sword_a/sword_low_01.tscn" id="1_ckktx"]
+[ext_resource type="Script" path="res://Items/Sword/sword_item.gd" id="1_j4vbs"]
 
-[node name="SwordLow_01" instance=ExtResource("1_18pry")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a87s"]
+size = Vector3(1.375, 0.265, 0.07)
 
-[node name="SwordLow" parent="." index="0"]
-transform = Transform3D(7, 0, 0, 0, -3.02483e-07, 7.062, 0, -6.92, -3.0869e-07, -2.82285e-09, -0.324579, 0)
-material_override = ExtResource("2_dikxw")
+[node name="SwordA" type="CharacterBody3D"]
+script = ExtResource("1_j4vbs")
+
+[node name="SwordLow_01" parent="." instance=ExtResource("1_ckktx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353516, 0, 0)
+shape = SubResource("BoxShape3D_2a87s")
