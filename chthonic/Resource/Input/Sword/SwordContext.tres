@@ -1,0 +1,201 @@
+[gd_resource type="Resource" script_class="GUIDEMappingContext" load_steps=56 format=3 uid="uid://dluy646vxef2y"]
+
+[ext_resource type="Script" path="res://addons/guide/guide_action_mapping.gd" id="1_ah2gy"]
+[ext_resource type="Resource" uid="uid://1erwdanix274" path="res://Resource/Input/Sword/action/swing_left.tres" id="2_dnyp4"]
+[ext_resource type="Script" path="res://addons/guide/guide_mapping_context.gd" id="2_pj8fi"]
+[ext_resource type="Script" path="res://addons/guide/guide_input_mapping.gd" id="3_8cm51"]
+[ext_resource type="Script" path="res://Resource/Input/CombatGeneral/modifier/ModifierConstant.gd" id="5_2l72o"]
+[ext_resource type="Script" path="res://addons/guide/modifiers/guide_modifier.gd" id="5_vep8h"]
+[ext_resource type="Resource" uid="uid://dh5yjbeujpxed" path="res://Resource/Input/CombatGeneral/action/left.tres" id="6_3p5u1"]
+[ext_resource type="Script" path="res://addons/guide/triggers/guide_trigger.gd" id="6_ofsmo"]
+[ext_resource type="Script" path="res://addons/guide/triggers/guide_trigger_chorded_action.gd" id="7_vq3nm"]
+[ext_resource type="Resource" uid="uid://dc7bjs3aa58uq" path="res://Resource/Input/Sword/action/swing_right.tres" id="8_74afw"]
+[ext_resource type="Resource" uid="uid://dr5e7j14a0ph2" path="res://Resource/Input/CombatGeneral/action/right.tres" id="9_uwpha"]
+[ext_resource type="Resource" uid="uid://r6ymruyys3n3" path="res://Resource/Input/Sword/action/thrust.tres" id="10_ekaqs"]
+[ext_resource type="Resource" uid="uid://bm1pui3bpi5cw" path="res://Resource/Input/CombatGeneral/action/up.tres" id="11_tcv4g"]
+[ext_resource type="Resource" uid="uid://dapmmb72whg2r" path="res://Resource/Input/Sword/action/kick.tres" id="12_4qsk8"]
+[ext_resource type="Resource" uid="uid://0580spcge2ri" path="res://Resource/Input/CombatGeneral/action/down.tres" id="13_2hu2o"]
+[ext_resource type="Resource" uid="uid://bk2he5nto2pv6" path="res://Resource/Input/Sword/action/deflect_left.tres" id="14_i73lb"]
+[ext_resource type="Resource" uid="uid://c41nwka4wrepr" path="res://Resource/Input/Sword/action/deflect_right.tres" id="15_hbme7"]
+[ext_resource type="Resource" uid="uid://cum2k02tit1nn" path="res://Resource/Input/Sword/action/riposte_left.tres" id="16_81pe3"]
+[ext_resource type="Resource" uid="uid://gpcss8otd8vh" path="res://Resource/Input/Sword/action/riposte_right.tres" id="17_l8260"]
+
+[sub_resource type="Resource" id="Resource_ctao2"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_eonok"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("6_3p5u1")
+actuation_threshold = 0.0
+
+[sub_resource type="Resource" id="Resource_mtp7a"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_ctao2")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_eonok")])
+metadata/_guide_triggers_collapsed = false
+
+[sub_resource type="Resource" id="Resource_5vbkv"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("2_dnyp4")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_mtp7a")])
+metadata/_guide_input_mappings_collapsed = false
+
+[sub_resource type="Resource" id="Resource_j5skv"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_wgvrv"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("9_uwpha")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_lgm21"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_j5skv")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_wgvrv")])
+
+[sub_resource type="Resource" id="Resource_3dxrm"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("8_74afw")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_lgm21")])
+
+[sub_resource type="Resource" id="Resource_hiwxy"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_6oig1"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("11_tcv4g")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_w8raw"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_hiwxy")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_6oig1")])
+
+[sub_resource type="Resource" id="Resource_luh3r"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("10_ekaqs")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_w8raw")])
+
+[sub_resource type="Resource" id="Resource_sxfnl"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_q0aow"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("13_2hu2o")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_amyr4"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_sxfnl")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_q0aow")])
+
+[sub_resource type="Resource" id="Resource_7c5ve"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("12_4qsk8")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_amyr4")])
+
+[sub_resource type="Resource" id="Resource_qniyn"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_xq218"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("13_2hu2o")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_8h6cr"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("6_3p5u1")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_2dppy"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_qniyn")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_xq218"), SubResource("Resource_8h6cr")])
+
+[sub_resource type="Resource" id="Resource_spak3"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("14_i73lb")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_2dppy")])
+
+[sub_resource type="Resource" id="Resource_0reey"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_0wlwt"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("13_2hu2o")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_8ww58"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("9_uwpha")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_8linl"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_0reey")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_0wlwt"), SubResource("Resource_8ww58")])
+
+[sub_resource type="Resource" id="Resource_yge7p"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("15_hbme7")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_8linl")])
+
+[sub_resource type="Resource" id="Resource_gme4j"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_h6xai"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("11_tcv4g")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_3rx71"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("6_3p5u1")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_tukvh"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_gme4j")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_h6xai"), SubResource("Resource_3rx71")])
+
+[sub_resource type="Resource" id="Resource_q8i2e"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("16_81pe3")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_tukvh")])
+
+[sub_resource type="Resource" id="Resource_axo03"]
+script = ExtResource("5_2l72o")
+output = Vector3(1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_s83li"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("11_tcv4g")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_767my"]
+script = ExtResource("7_vq3nm")
+action = ExtResource("9_uwpha")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_58p2i"]
+script = ExtResource("3_8cm51")
+modifiers = Array[ExtResource("5_vep8h")]([SubResource("Resource_axo03")])
+triggers = Array[ExtResource("6_ofsmo")]([SubResource("Resource_s83li"), SubResource("Resource_767my")])
+metadata/_guide_triggers_collapsed = false
+
+[sub_resource type="Resource" id="Resource_nec7e"]
+script = ExtResource("1_ah2gy")
+action = ExtResource("17_l8260")
+input_mappings = Array[ExtResource("3_8cm51")]([SubResource("Resource_58p2i")])
+
+[resource]
+script = ExtResource("2_pj8fi")
+display_name = ""
+mappings = Array[ExtResource("1_ah2gy")]([SubResource("Resource_5vbkv"), SubResource("Resource_3dxrm"), SubResource("Resource_luh3r"), SubResource("Resource_7c5ve"), SubResource("Resource_spak3"), SubResource("Resource_yge7p"), SubResource("Resource_q8i2e"), SubResource("Resource_nec7e")])

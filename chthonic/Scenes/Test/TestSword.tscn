@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://crcuktx1srs8r"]
+
+[ext_resource type="Script" path="res://Scenes/Test/test_sword.gd" id="1_va77i"]
+[ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
+[ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="2_cd35j"]
+[ext_resource type="PackedScene" uid="uid://cdal5w0ruhvi8" path="res://Objects/Weapon/sword_b/sword_b.tscn" id="3_eggpp"]
+[ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="3_jdb5i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ss4g2"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Environment" id="Environment_58kkl"]
+
+[node name="TestSword" type="Node3D"]
+script = ExtResource("1_va77i")
+combat_context = ExtResource("2_6epq7")
+sword_context = ExtResource("3_jdb5i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.955665, 0.294457, 0, -0.294457, 0.955665, 0, 0.956691, 1.79663)
+
+[node name="GuideDebugger" parent="Camera3D" instance=ExtResource("2_cd35j")]
+
+[node name="SwordB" parent="." instance=ExtResource("3_eggpp")]
+transform = Transform3D(-2.80971e-08, -3.34849e-08, -1, -0.766044, 0.642788, 0, 0.642788, 0.766044, -4.37114e-08, 0, 0.369, 0.95)
+slide_bounds = AABB(-1, -0.25, 0, 2, 0.5, 0.1)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ss4g2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_58kkl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.874773, 0.173148, -0.452539, 0.0732261, 0.876, 0.476719, 0.478968, -0.450159, 0.753623, 0, 1.20508, 0)
