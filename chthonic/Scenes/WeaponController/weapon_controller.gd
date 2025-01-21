@@ -27,7 +27,7 @@ func _ready() -> void:
     weapon_obj.weapon_controller = self
     add_child(weapon_obj)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if not in_combat:
         return
 

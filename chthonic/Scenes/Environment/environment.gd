@@ -18,12 +18,12 @@ var update_sky: bool = true
 func _ready() -> void:
     update_time()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     if update_sky:
         update_time()
 
-func set_time(hour: float) -> void:
-    self.hour = hour
+func set_time(to_hour: float) -> void:
+    self.hour = to_hour
     update_time()
 
 func update_time() -> void:

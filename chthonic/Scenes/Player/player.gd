@@ -11,7 +11,7 @@ func _ready() -> void:
     in_combat = true
     stance = Combat.Stance.Idle
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     pass
 
 func _physics_process(delta: float) -> void:

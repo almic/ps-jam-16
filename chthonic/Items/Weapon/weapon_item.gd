@@ -27,11 +27,8 @@ func _ready() -> void:
     if not anim_player or not blade_area:
         push_warning("Missing an AnimationPlayer or BladeHitArea!")
     normal_movement_speed = movement_speed
-    print(position)
-    print(slide_bounds)
-    print(slide_bounds.end)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if user_input_enabled and weapon_controller.stance == Combat.Stance.Idle:
         move_left_right()
 
