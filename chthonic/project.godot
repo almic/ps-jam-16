@@ -22,7 +22,8 @@ GUIDE="*res://addons/guide/guide.gd"
 
 enabled=PackedStringArray("res://addons/guide/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
-[rendering]
+[layer_names]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Dynamic Objects"

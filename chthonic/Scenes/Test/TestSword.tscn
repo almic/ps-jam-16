@@ -1,29 +1,99 @@
-[gd_scene load_steps=8 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=21 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="2_cd35j"]
-[ext_resource type="PackedScene" uid="uid://cdal5w0ruhvi8" path="res://Objects/Weapon/sword_b/sword_b.tscn" id="3_eggpp"]
 [ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="3_jdb5i"]
+[ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
+[ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="7_buvux"]
+[ext_resource type="Texture2D" uid="uid://duh8tngr75my2" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Normal.png.PNG" id="8_abptj"]
+[ext_resource type="Shader" path="res://Scenes/Test/terrain_no_specular.gdshader" id="9_638ov"]
+[ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
+[ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss4g2"]
 size = Vector3(10, 1, 10)
 
-[sub_resource type="Environment" id="Environment_58kkl"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_lbsm1"]
+radius = 0.15
+
+[sub_resource type="Gradient" id="Gradient_des6i"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a65rv"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6w3r3"]
+seamless = true
+color_ramp = SubResource("Gradient_des6i")
+noise = SubResource("FastNoiseLite_a65rv")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5wqoa"]
+_shader_parameters = {
+"blend_sharpness": 0.87,
+"height_blending": true,
+"macro_variation1": Color(1, 1, 1, 1),
+"macro_variation2": Color(1, 1, 1, 1),
+"noise1_angle": 0.0,
+"noise1_offset": Vector2(0.5, 0.5),
+"noise1_scale": 0.04,
+"noise2_scale": 0.076,
+"noise3_scale": 0.225,
+"noise_texture": SubResource("NoiseTexture2D_6w3r3"),
+"vertex_normals_distance": 128.0,
+"world_noise_height": 16.0,
+"world_noise_lod_distance": 7500.0,
+"world_noise_max_octaves": 4,
+"world_noise_min_octaves": 2,
+"world_noise_offset": Vector3(0, 0, 0),
+"world_noise_region_blend": 0.33,
+"world_noise_scale": 5.0
+}
+world_background = 2
+shader_override_enabled = true
+shader_override = ExtResource("9_638ov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7xsl"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 960.0
+distance_fade_max_distance = 480.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_sxlsy"]
+height_offset = 0.5
+density = 10.0
+material_override = SubResource("StandardMaterial3D_l7xsl")
+generated_type = 1
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_mkksw"]
+name = "Rock_01_03_Diffuse.png"
+albedo_texture = ExtResource("7_buvux")
+normal_texture = ExtResource("8_abptj")
+uv_scale = 0.5
+detiling = 0.147
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_87r0g"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_sxlsy")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mkksw")])
 
 [node name="TestSword" type="Node3D"]
 script = ExtResource("1_va77i")
 combat_context = ExtResource("2_6epq7")
 sword_context = ExtResource("3_jdb5i")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.955665, 0.294457, 0, -0.294457, 0.955665, 0, 0.956691, 1.79663)
-
-[node name="GuideDebugger" parent="Camera3D" instance=ExtResource("2_cd35j")]
-
-[node name="SwordB" parent="." instance=ExtResource("3_eggpp")]
-transform = Transform3D(-2.80971e-08, -3.34849e-08, -1, -0.766044, 0.642788, 0, 0.642788, 0.766044, -4.37114e-08, 0, 0.369, 0.95)
-slide_bounds = AABB(-1, -0.25, 0, 2, 0.5, 0.1)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -31,8 +101,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_ss4g2")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_58kkl")
+[node name="DayNightEnvironment" parent="." instance=ExtResource("6_2rkfk")]
+transform = Transform3D(0.866021, 0.5, 0, -0.499997, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+hour = 11.788
+latitude = 30.0
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.874773, 0.173148, -0.452539, 0.0732261, 0.876, 0.476719, 0.478968, -0.450159, 0.753623, 0, 1.20508, 0)
+[node name="climbing_rock_low" parent="." instance=ExtResource("9_tt343")]
+transform = Transform3D(0.392337, 0, -0.919822, 0, 1, 0, 0.919822, 0, 0.392337, -107.416, -1.531, -4.798)
+
+[node name="Player" parent="." instance=ExtResource("10_4ck11")]
+transform = Transform3D(0.85896, 0, -0.512043, 0, 1, 0, 0.512043, 0, 0.85896, -0.476984, 0.523261, -0.741594)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
+transform = Transform3D(-4.37114e-08, -0.642788, 0.766044, 0, 0.766044, 0.642788, -1, 2.80971e-08, -3.34849e-08, 0, 0, 0)
+collision_mask = 5
+shape = SubResource("SphereShape3D_lbsm1")
+
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 0, 0)
+
+[node name="GuideDebugger" parent="Player/SpringArm3D/Camera3D" instance=ExtResource("2_cd35j")]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://Scenes/Test/terrain"
+material = SubResource("Terrain3DMaterial_5wqoa")
+assets = SubResource("Terrain3DAssets_87r0g")
+top_level = true
+metadata/_edit_lock_ = true

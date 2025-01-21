@@ -1,0 +1,21 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://dyo31ihu3d6o8"]
+
+[ext_resource type="Sky" uid="uid://dwy645b4udi4i" path="res://Resource/Sky/SkyMain.tres" id="1_2v3rj"]
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 1.75
+sky = ExtResource("1_2v3rj")
+tonemap_mode = 1
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.02
+glow_strength = 0.8
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.500833, 0.46989, 0.423375, 1)
+fog_sun_scatter = 0.05
+fog_density = 0.004
+fog_aerial_perspective = 0.34
+fog_sky_affect = 0.73
+fog_height_density = 1.0

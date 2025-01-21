@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bll1g6dcrj4n5"]
+
+[ext_resource type="Script" path="res://Scenes/Environment/environment.gd" id="1_7rrv5"]
+[ext_resource type="Environment" uid="uid://dyo31ihu3d6o8" path="res://Resource/Environment/Environment.tres" id="2_xbwnu"]
+
+[node name="DayNightEnvironment" type="Node3D"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_7rrv5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_xbwnu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 0

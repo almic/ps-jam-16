@@ -1,0 +1,8 @@
+[gd_resource type="Sky" load_steps=2 format=3 uid="uid://dwy645b4udi4i"]
+
+[ext_resource type="Material" uid="uid://b538dr8on2jbi" path="res://Resource/Sky/SkyMainMaterial.tres" id="1_2dgux"]
+
+[resource]
+sky_material = ExtResource("1_2dgux")
+process_mode = 2
+radiance_size = 2
