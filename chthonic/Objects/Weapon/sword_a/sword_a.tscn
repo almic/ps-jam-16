@@ -1,16 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://21xsmkoqv5gp"]
+[gd_scene load_steps=5 format=3 uid="uid://21xsmkoqv5gp"]
 
 [ext_resource type="PackedScene" uid="uid://dq8u3a1xsixt" path="res://Objects/Weapon/sword_a/sword_low_01.tscn" id="1_ckktx"]
 [ext_resource type="Script" path="res://Items/Sword/sword_item.gd" id="1_j4vbs"]
+[ext_resource type="AnimationLibrary" uid="uid://dfeykjn4p230l" path="res://Animations/Sword/SwordAnimations.tres" id="2_jmawt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2a87s"]
 size = Vector3(1.375, 0.265, 0.07)
 
 [node name="SwordA" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_j4vbs")
+
+[node name="RigidBox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353516, 1.49012e-08, 0)
+shape = SubResource("BoxShape3D_2a87s")
 
 [node name="SwordLow_01" parent="." instance=ExtResource("1_ckktx")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353516, 0, 0)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SwordLow_01"]
+unique_name_in_owner = true
+libraries = {
+"SwordAnimations": ExtResource("2_jmawt")
+}
+
+[node name="BladeHitArea" type="Area3D" parent="SwordLow_01"]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 7
+
+[node name="BladeBox" type="CollisionShape3D" parent="SwordLow_01/BladeHitArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353516, 1.49012e-08, 0)
 shape = SubResource("BoxShape3D_2a87s")

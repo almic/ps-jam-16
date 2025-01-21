@@ -1,16 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdal5w0ruhvi8"]
+[gd_scene load_steps=6 format=3 uid="uid://cdal5w0ruhvi8"]
 
 [ext_resource type="PackedScene" uid="uid://cn0ifisvjfypt" path="res://Objects/Weapon/sword_b/silver_sword_low_poly.tscn" id="1_hnr8b"]
 [ext_resource type="Script" path="res://Items/Sword/sword_item.gd" id="1_ldc8a"]
+[ext_resource type="AnimationLibrary" uid="uid://dfeykjn4p230l" path="res://Animations/Sword/SwordAnimations.tres" id="2_bmuuc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e6jm7"]
-size = Vector3(1.972, 0.38, 0.07)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2boeh"]
+size = Vector3(1.972, 0.384, 0.07)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2h25c"]
+size = Vector3(1.972, 0.095, 0.07)
 
 [node name="SwordB" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_ldc8a")
+slide_bounds = AABB(0, -0.25, -0.4, 0, 0.5, 0.8)
+
+[node name="RigidBox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629, 0, 0)
+shape = SubResource("BoxShape3D_2boeh")
 
 [node name="silver_sword_low_poly" parent="." instance=ExtResource("1_hnr8b")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636066, 0, 0)
-shape = SubResource("BoxShape3D_e6jm7")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="silver_sword_low_poly"]
+unique_name_in_owner = true
+libraries = {
+"SwordAnimations": ExtResource("2_bmuuc")
+}
+
+[node name="BladeHitArea" type="Area3D" parent="silver_sword_low_poly"]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 7
+
+[node name="BladeBox" type="CollisionShape3D" parent="silver_sword_low_poly/BladeHitArea"]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.628956, 0, 0)
+shape = SubResource("BoxShape3D_2h25c")
