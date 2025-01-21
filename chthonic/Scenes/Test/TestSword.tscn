@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=23 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
+[ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="2_cd35j"]
 [ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="3_jdb5i"]
+[ext_resource type="PackedScene" uid="uid://b6te5oktps7pa" path="res://UI/Pause/UIPause.tscn" id="4_a6lhf"]
 [ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
 [ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="7_buvux"]
 [ext_resource type="Texture2D" uid="uid://duh8tngr75my2" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Normal.png.PNG" id="8_abptj"]
@@ -94,6 +96,20 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 script = ExtResource("1_va77i")
 combat_context = ExtResource("2_6epq7")
 sword_context = ExtResource("3_jdb5i")
+menu_context = ExtResource("2_8cov7")
+
+[node name="UIControl" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiPause" parent="UIControl" instance=ExtResource("4_a6lhf")]
+layout_mode = 1
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

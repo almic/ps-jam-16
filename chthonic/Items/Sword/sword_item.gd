@@ -45,6 +45,7 @@ func _process(delta: float) -> void:
     check_actions()
 
 func move_left_right() -> void:
+
     var camera = get_tree().root.get_camera_3d()
     velocity = camera.basis * (left_right.value_axis_3d + Vector3(0, up_down.value_axis_3d.x, 0)) * movement_speed
 

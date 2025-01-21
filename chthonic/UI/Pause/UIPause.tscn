@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6te5oktps7pa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wuj8w"]
+bg_color = Color(0.356863, 0.0980392, 0.0392157, 0.133333)
+corner_detail = 1
+anti_aliasing = false
+
+[node name="UiPause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wuj8w")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.027451, 0.027451, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
