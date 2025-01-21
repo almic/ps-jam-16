@@ -119,11 +119,11 @@ shape = SubResource("BoxShape3D_ss4g2")
 
 [node name="DayNightEnvironment" parent="." instance=ExtResource("6_2rkfk")]
 transform = Transform3D(0.866021, 0.5, 0, -0.499997, 0.866025, 0, 0, 0, 1, 0, 0, 0)
-hour = 11.788
+hour = 10.313
 latitude = 30.0
 
 [node name="climbing_rock_low" parent="." instance=ExtResource("9_tt343")]
-transform = Transform3D(0.392337, 0, -0.919822, 0, 1, 0, 0.919822, 0, 0.392337, -107.416, -1.531, -4.798)
+transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295, -117.942, -2.66037, 11.6219)
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
 transform = Transform3D(0.85896, 0, -0.512043, 0, 1, 0, 0.512043, 0, 0.85896, -0.476984, 0.523261, -0.741594)
@@ -139,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 
 [node name="GuideDebugger" parent="Player/SpringArm3D/Camera3D" instance=ExtResource("2_cd35j")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://Scenes/Test/terrain"
+data_directory = "res://Scenes/Levels/Test/terrain"
 material = SubResource("Terrain3DMaterial_5wqoa")
 assets = SubResource("Terrain3DAssets_87r0g")
 top_level = true
