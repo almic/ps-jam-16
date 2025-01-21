@@ -5,8 +5,7 @@
 
 [resource]
 resource_name = "Rock_01_03_Diffuse"
-vertex_color_use_as_albedo = true
+specular_mode = 2
 albedo_texture = ExtResource("1_xqwne")
-emission_enabled = true
 normal_enabled = true
 normal_texture = ExtResource("2_pjxld")
