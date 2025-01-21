@@ -47,7 +47,6 @@ func _update_state(input: Vector3, delta: float, value_type: GUIDEAction.GUIDEAc
 
     if meets_threshold():
         _reset()
-        print("accumulator is triggered")
         return GUIDETriggerState.TRIGGERED
 
     return GUIDETriggerState.ONGOING
