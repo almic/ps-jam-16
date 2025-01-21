@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://crcuktx1srs8r"]
 
-[ext_resource type="Script" path="res://Scenes/Test/test_sword.gd" id="1_va77i"]
+[ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
 [ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="2_cd35j"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
 [ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="7_buvux"]
 [ext_resource type="Texture2D" uid="uid://duh8tngr75my2" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Normal.png.PNG" id="8_abptj"]
-[ext_resource type="Shader" path="res://Scenes/Test/terrain_no_specular.gdshader" id="9_638ov"]
+[ext_resource type="Shader" path="res://Scenes/Levels/Test/terrain_no_specular.gdshader" id="9_638ov"]
 [ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
 [ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
 
