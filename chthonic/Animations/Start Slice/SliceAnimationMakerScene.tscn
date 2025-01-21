@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://dj3yyg4d0kobh"]
+
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/2.JPEG-e7d22be3366f51b69db17b6d5963f4fe.ctex" id="1_6cf0y"]
+[ext_resource type="Texture2D" uid="uid://cktw835ged4tm" path="res://Animations/Start Slice/Slice Animation Frames/3.JPEG" id="1_nx2bb"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/4.JPEG-bdca98eddc0417d6ddf8bfc0e4d8acd8.ctex" id="3_pcd5b"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/5.JPEG-e248f18996292bb98a8a28549705ebe0.ctex" id="4_ch1c4"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/6.JPEG-ff7de6ba036a6d169a40079a7d6c9d55.ctex" id="5_gf4wy"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/7.JPEG-2c94694e12a5dbdf3bdb2b12a8be045a.ctex" id="6_pcy6s"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/8.JPEG-afa23f7ef3c71e2b5b71a15f3115153f.ctex" id="7_k2g0w"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/10.JPEG-ab00010791c44164b9fa88daae307e85.ctex" id="8_2udyl"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/12.JPEG-a85e10b52f3655627ceb196ac2a73e2a.ctex" id="9_cgxm3"]
+[ext_resource type="Texture2D" path="res://Animations/Start Slice/Slice Animation Frames/13.JPEG-7abbaacd680d170a51f70ce52f79dfbc.ctex" id="10_vyske"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdh27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6cf0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_nx2bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pcd5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ch1c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gf4wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pcy6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k2g0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2udyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cgxm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vyske")
+}],
+"loop": true,
+"name": &"SliceAnim",
+"speed": 13.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rdh27")
+animation = &"SliceAnim"
+frame_progress = 0.894556

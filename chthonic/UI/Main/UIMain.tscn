@@ -1,0 +1,172 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3aqc2rhbldfu"]
+
+[ext_resource type="Script" path="res://UI/Main/ui_main.gd" id="1_fjtwr"]
+[ext_resource type="FontFile" path="res://Fonts/xolonium/Xolonium.tres" id="1_pmisl"]
+[ext_resource type="FontFile" uid="uid://b36pu67m73rrf" path="res://Fonts/montreal/Montreal-Bold.ttf" id="2_u15li"]
+[ext_resource type="Script" path="res://UI/Main/start_game.gd" id="4_sf7ie"]
+[ext_resource type="PackedScene" uid="uid://dj3yyg4d0kobh" path="res://Animations/Start Slice/SliceAnimationMakerScene.tscn" id="5_kuu7e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wuj8w"]
+bg_color = Color(0.701961, 0.054902, 0.0313726, 1)
+corner_detail = 1
+anti_aliasing = false
+
+[node name="UiMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fjtwr")
+metadata/globalVolume = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wuj8w")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -258.0
+offset_right = 77.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.027451, 0.027451, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_pmisl")
+theme_override_font_sizes/font_size = 60
+text = "CHTONIC"
+
+[node name="Sound Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -123.0
+offset_right = 12.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Volume"
+
+[node name="Sound Slider" type="HSlider" parent="Panel/Sound Label"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = 9.5
+offset_right = 112.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.95599
+offset_right = 20.0
+offset_bottom = 9.95599
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Game" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -83.0
+offset_right = 54.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u15li")
+theme_override_font_sizes/font_size = 40
+text = "Start
+"
+script = ExtResource("4_sf7ie")
+
+[node name="Quit Button Guide" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 77.0
+offset_right = 57.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u15li")
+theme_override_font_sizes/font_size = 45
+text = "QUIT
+"
+
+[node name="Quit Game" type="Button" parent="Quit Button Guide"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -29.0
+offset_right = 54.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u15li")
+theme_override_font_sizes/font_size = 40
+text = "Start
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" parent="MarginContainer" instance=ExtResource("5_kuu7e")]
+position = Vector2(6, 250)
+
+[connection signal="drag_ended" from="Panel/Sound Label/Sound Slider" to="." method="_on_sound_slider_drag_ended"]
+[connection signal="drag_started" from="Panel/Sound Label/Sound Slider" to="." method="_on_sound_slider_drag_started"]
+[connection signal="value_changed" from="Panel/Sound Label/Sound Slider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="Control/Start Game" to="." method="_on_start_game_pressed"]
