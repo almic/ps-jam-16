@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponMove" load_steps=3 format=3 uid="uid://b5ijakrm1ldy"]
+
+[ext_resource type="Resource" uid="uid://dapmmb72whg2r" path="res://Resource/Input/Sword/action/kick.tres" id="1_h6nuv"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMove.gd" id="2_1272e"]
+
+[resource]
+script = ExtResource("2_1272e")
+action = ExtResource("1_h6nuv")
+starting = 3

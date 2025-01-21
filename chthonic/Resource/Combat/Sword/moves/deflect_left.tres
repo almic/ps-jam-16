@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponMove" load_steps=3 format=3 uid="uid://c0bqqkvf0cft6"]
+
+[ext_resource type="Resource" uid="uid://bk2he5nto2pv6" path="res://Resource/Input/Sword/action/deflect_left.tres" id="1_onydg"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMove.gd" id="2_kfhl6"]
+
+[resource]
+script = ExtResource("2_kfhl6")
+action = ExtResource("1_onydg")
+starting = 5

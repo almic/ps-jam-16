@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponMove" load_steps=3 format=3 uid="uid://bnigvp518yvqv"]
+
+[ext_resource type="Resource" uid="uid://1erwdanix274" path="res://Resource/Input/Sword/action/swing_left.tres" id="1_vtixe"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMove.gd" id="2_x1w4h"]
+
+[resource]
+script = ExtResource("2_x1w4h")
+action = ExtResource("1_vtixe")
+starting = 1
+idle_only = true
+anim_library = "SwordAnimations"
+anim_name = "swing_left"
+after_enabled = false
+after_result = 0
+after_wait = 0.0
+after_time = 0.0
