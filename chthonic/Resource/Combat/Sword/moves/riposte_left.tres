@@ -6,9 +6,10 @@
 
 [resource]
 script = ExtResource("1_1d53s")
+name = "RiposteLeft"
 action = ExtResource("1_lh2x3")
-starting = 8
-idle_only = false
+starting = 9
+anim_name = ""
 after_enabled = true
 after_move = ExtResource("2_k28d5")
 after_result = 2

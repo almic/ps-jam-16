@@ -1,18 +1,13 @@
 class_name WeaponMove extends Resource
 
+@export var name: String
 @export var action: GUIDEAction
 ## The starting position of the weapon to activate this move
 @export var starting: Combat.MovePosition
 
 @export_subgroup("Animation", "anim_")
-
-## The library name, used as a prefix when playing the provided animation.
-## Edit the WeaponMove.gd script to add new animation libraries.
-@export_enum("SwordAnimations") var anim_library: String
-
 ## Animation name as it exists in the animation library
 @export var anim_name: String
-
 
 @export_category("Prerequisites")
 

@@ -5,5 +5,12 @@
 
 [resource]
 script = ExtResource("2_b8xrs")
+name = "DeflectRight"
 action = ExtResource("1_kfury")
-starting = 4
+starting = 6
+anim_library = ""
+anim_name = ""
+after_enabled = false
+after_result = 0
+after_wait = 0.0
+after_time = 0.0

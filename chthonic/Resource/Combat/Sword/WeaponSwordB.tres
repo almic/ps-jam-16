@@ -10,3 +10,5 @@ script = ExtResource("1_vgxmm")
 weapon_type = ExtResource("4_kf8wj")
 move_set = ExtResource("1_ttrux")
 weapon_scene = ExtResource("3_xbceb")
+animation_library = "SwordAnimations"
+anim_idle_name = "idle_float"

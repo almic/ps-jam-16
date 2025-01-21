@@ -5,5 +5,12 @@
 
 [resource]
 script = ExtResource("2_1272e")
+name = "Kick"
 action = ExtResource("1_h6nuv")
-starting = 3
+starting = 5
+anim_library = ""
+anim_name = ""
+after_enabled = false
+after_result = 0
+after_wait = 0.0
+after_time = 0.0

@@ -8,3 +8,11 @@ class_name CombatWeapon extends Resource
 
 ## Weapon's Scene
 @export var weapon_scene: PackedScene
+
+## Animation library name which holds the Move Set's animations
+## Edit the CombatWeapon.gd script to add new animation libraries.
+@export_enum("SwordAnimations") var animation_library: String
+
+@export_subgroup("Animations", "anim_")
+## Name of the idle animation as it exists in the Animation Library
+@export var anim_idle_name: String

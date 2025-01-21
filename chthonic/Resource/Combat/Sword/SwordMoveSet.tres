@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="MoveSet" load_steps=12 format=3 uid="uid://cupnp65bxxy3s"]
+[gd_resource type="Resource" script_class="WeaponMoveSet" load_steps=11 format=3 uid="uid://cupnp65bxxy3s"]
 
 [ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMove.gd" id="1_xkqf3"]
 [ext_resource type="Resource" uid="uid://bnigvp518yvqv" path="res://Resource/Combat/Sword/moves/swing_left.tres" id="2_fks8x"]
 [ext_resource type="Resource" uid="uid://b8o2bluauj6ny" path="res://Resource/Combat/Sword/moves/swing_right.tres" id="3_bmgfv"]
 [ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMoveSet.gd" id="3_ewj5g"]
 [ext_resource type="Resource" uid="uid://gmrq5kwk3xg0" path="res://Resource/Combat/Sword/moves/thrust.tres" id="4_tgeq8"]
-[ext_resource type="Resource" uid="uid://5x1q40ipe1vp" path="res://Resource/Combat/Sword/SwordWeaponType.tres" id="4_um6ih"]
 [ext_resource type="Resource" uid="uid://b5ijakrm1ldy" path="res://Resource/Combat/Sword/moves/kick.tres" id="5_76tw6"]
 [ext_resource type="Resource" uid="uid://c0bqqkvf0cft6" path="res://Resource/Combat/Sword/moves/deflect_left.tres" id="6_tafau"]
 [ext_resource type="Resource" uid="uid://bi5ghraocahx8" path="res://Resource/Combat/Sword/moves/deflect_right.tres" id="7_1e3ig"]
@@ -14,5 +13,4 @@
 
 [resource]
 script = ExtResource("3_ewj5g")
-type = ExtResource("4_um6ih")
 moves = Array[ExtResource("1_xkqf3")]([ExtResource("2_fks8x"), ExtResource("3_bmgfv"), ExtResource("4_tgeq8"), ExtResource("5_76tw6"), ExtResource("6_tafau"), ExtResource("7_1e3ig"), ExtResource("8_18j2k"), ExtResource("9_b5xuv")])

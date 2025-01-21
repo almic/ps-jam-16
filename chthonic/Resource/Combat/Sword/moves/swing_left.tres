@@ -5,10 +5,9 @@
 
 [resource]
 script = ExtResource("2_x1w4h")
+name = "SwingLeft"
 action = ExtResource("1_vtixe")
-starting = 1
-idle_only = true
-anim_library = "SwordAnimations"
+starting = 3
 anim_name = "swing_left"
 after_enabled = false
 after_result = 0

@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=20 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
 [ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
-[ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="2_cd35j"]
 [ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="3_jdb5i"]
 [ext_resource type="PackedScene" uid="uid://b6te5oktps7pa" path="res://UI/Pause/UIPause.tscn" id="4_a6lhf"]
 [ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
@@ -12,12 +11,6 @@
 [ext_resource type="Shader" path="res://Scenes/Levels/Test/terrain_no_specular.gdshader" id="9_638ov"]
 [ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
 [ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ss4g2"]
-size = Vector3(10, 1, 10)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_lbsm1"]
-radius = 0.15
 
 [sub_resource type="Gradient" id="Gradient_des6i"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -111,12 +104,6 @@ grow_vertical = 2
 [node name="UiPause" parent="UIControl" instance=ExtResource("4_a6lhf")]
 layout_mode = 1
 
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_ss4g2")
-
 [node name="DayNightEnvironment" parent="." instance=ExtResource("6_2rkfk")]
 transform = Transform3D(0.866021, 0.5, 0, -0.499997, 0.866025, 0, 0, 0, 1, 0, 0, 0)
 hour = 10.313
@@ -126,17 +113,7 @@ latitude = 30.0
 transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295, -117.942, -2.66037, 11.6219)
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
-transform = Transform3D(0.85896, 0, -0.512043, 0, 1, 0, 0.512043, 0, 0.85896, -0.476984, 0.523261, -0.741594)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
-transform = Transform3D(-4.37114e-08, -0.642788, 0.766044, 0, 0.766044, 0.642788, -1, 2.80971e-08, -3.34849e-08, 0, 0, 0)
-collision_mask = 5
-shape = SubResource("SphereShape3D_lbsm1")
-
-[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 0, 0)
-
-[node name="GuideDebugger" parent="Player/SpringArm3D/Camera3D" instance=ExtResource("2_cd35j")]
+transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.705281, 0.523261, -0.447923)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"

@@ -5,10 +5,9 @@
 
 [resource]
 script = ExtResource("2_5w474")
+name = "Thrust"
 action = ExtResource("1_42ktc")
-starting = 2
-idle_only = true
-anim_library = "SwordAnimations"
+starting = 4
 anim_name = "thrust"
 after_enabled = false
 after_result = 0

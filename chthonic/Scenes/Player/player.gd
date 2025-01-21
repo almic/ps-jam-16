@@ -1,22 +1,37 @@
 # Allows us to see the sword in-editor
 @tool
 
-class_name Player extends Node3D
+class_name Player extends WeaponController
 
-@export var weapon_scene: PackedScene = preload("res://Objects/Weapon/sword_b/sword_b.tscn")
-
-var weapon: SwordItem
-
+var next_move: WeaponMove = null
 
 func _ready() -> void:
-    weapon = weapon_scene.instantiate()
-    add_child(weapon)
-
+    super._ready()
+    weapon_obj.user_input_enabled = true
+    in_combat = true
+    stance = Combat.Stance.Idle
 
 func _process(delta: float) -> void:
+    pass
 
-    if Engine.is_editor_hint():
+func _physics_process(delta: float) -> void:
+    super._physics_process(delta)
+    pass
 
-        return
+func _should_act() -> bool:
+    if not stance == Combat.Stance.Idle:
+        return false
 
-    # Normal player stuff
+    for move in weapon.move_set.moves:
+        if move.action.is_triggered():
+            next_move = move
+            print("Activating move " + next_move.name)
+            return true
+
+    return false
+
+func _pick_move() -> WeaponMove:
+    return next_move
+
+func _update_state(_delta: float) -> void:
+    pass
