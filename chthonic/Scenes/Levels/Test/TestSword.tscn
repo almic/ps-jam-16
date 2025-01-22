@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=22 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
@@ -11,6 +11,8 @@
 [ext_resource type="Shader" path="res://Scenes/Levels/Test/terrain_no_specular.gdshader" id="9_638ov"]
 [ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
 [ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
+[ext_resource type="PackedScene" uid="uid://cknaf05d751gx" path="res://Scenes/AI/AIController.tscn" id="12_oc725"]
+[ext_resource type="Resource" uid="uid://w35oih2j6fn2" path="res://Resource/Combat/Sword/WeaponSwordB.tres" id="13_4ma2v"]
 
 [sub_resource type="Gradient" id="Gradient_des6i"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -113,7 +115,7 @@ latitude = 30.0
 transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295, -117.942, -2.66037, 11.6219)
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
-transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.705281, 0.523261, -0.447923)
+transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.966, 1, -1.209)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"
@@ -121,3 +123,11 @@ material = SubResource("Terrain3DMaterial_5wqoa")
 assets = SubResource("Terrain3DAssets_87r0g")
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="AiController" parent="." instance=ExtResource("12_oc725")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2892, 3.22573, 8.67693)
+weapon = ExtResource("13_4ma2v")
+
+[node name="AiController2" parent="." instance=ExtResource("12_oc725")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13873, -0.0463915, 9.1045)
+weapon = ExtResource("13_4ma2v")
