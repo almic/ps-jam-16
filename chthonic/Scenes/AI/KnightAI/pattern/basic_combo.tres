@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="AttackPattern" load_steps=15 format=3 uid="uid://behax7fplmvbi"]
+
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/AttackDecision.gd" id="1_8l2r4"]
+[ext_resource type="Resource" uid="uid://cupnp65bxxy3s" path="res://Resource/Combat/Sword/SwordMoveSet.tres" id="1_p5asq"]
+[ext_resource type="Resource" uid="uid://bnigvp518yvqv" path="res://Resource/Combat/Sword/moves/swing_left.tres" id="2_gct7n"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/Decision/decision_attack.gd" id="3_7eedc"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/Decision/decision_pick.gd" id="4_ucjw2"]
+[ext_resource type="Resource" uid="uid://b8o2bluauj6ny" path="res://Resource/Combat/Sword/moves/swing_right.tres" id="5_bvr80"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/Decision/decision_random.gd" id="6_wmfqi"]
+[ext_resource type="Resource" uid="uid://gmrq5kwk3xg0" path="res://Resource/Combat/Sword/moves/thrust.tres" id="7_xsdc8"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/AttackPattern.gd" id="8_qj8ob"]
+
+[sub_resource type="Resource" id="Resource_20fj2"]
+script = ExtResource("3_7eedc")
+move = ExtResource("2_gct7n")
+
+[sub_resource type="Resource" id="Resource_iquuf"]
+script = ExtResource("3_7eedc")
+move = ExtResource("5_bvr80")
+
+[sub_resource type="Resource" id="Resource_mhfhh"]
+script = ExtResource("4_ucjw2")
+first = SubResource("Resource_20fj2")
+first_chance = 0.5
+second = SubResource("Resource_iquuf")
+second_chance = 1.0
+third_chance = 0.2
+fourth_chance = 0.2
+
+[sub_resource type="Resource" id="Resource_wh8e8"]
+script = ExtResource("6_wmfqi")
+probability = 0.5
+
+[sub_resource type="Resource" id="Resource_ml5mh"]
+script = ExtResource("3_7eedc")
+move = ExtResource("7_xsdc8")
+
+[resource]
+script = ExtResource("8_qj8ob")
+move_set = ExtResource("1_p5asq")
+pattern = Array[ExtResource("1_8l2r4")]([SubResource("Resource_mhfhh"), SubResource("Resource_wh8e8"), SubResource("Resource_ml5mh")])

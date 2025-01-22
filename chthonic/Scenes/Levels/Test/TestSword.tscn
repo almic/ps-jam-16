@@ -86,55 +86,55 @@ detiling = 0.147
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_sxlsy")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mkksw")])
 
-[sub_resource type="Resource" id="Resource_0b051"]
+[sub_resource type="Resource" id="Resource_qixul"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_rkm55"]
+[sub_resource type="Resource" id="Resource_g2ppu"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_l5y3a"]
+[sub_resource type="Resource" id="Resource_h5h7l"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_0b051")
-target_position = SubResource("Resource_rkm55")
+target = SubResource("Resource_qixul")
+target_position = SubResource("Resource_g2ppu")
 memories = Array[ExtResource("11_wonjp")]([])
 
-[sub_resource type="Resource" id="Resource_xeh3p"]
+[sub_resource type="Resource" id="Resource_bxtrv"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_a23ju"]
+[sub_resource type="Resource" id="Resource_2vroo"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_6rivy"]
+[sub_resource type="Resource" id="Resource_wcgqs"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_xeh3p")
-target_position = SubResource("Resource_a23ju")
+target = SubResource("Resource_bxtrv")
+target_position = SubResource("Resource_2vroo")
 memories = Array[ExtResource("11_wonjp")]([])
 
-[sub_resource type="Resource" id="Resource_beyip"]
+[sub_resource type="Resource" id="Resource_dnf5m"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_3nupn"]
+[sub_resource type="Resource" id="Resource_mhcyy"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_v1gn1"]
+[sub_resource type="Resource" id="Resource_defvv"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_beyip")
-target_position = SubResource("Resource_3nupn")
+target = SubResource("Resource_dnf5m")
+target_position = SubResource("Resource_mhcyy")
 memories = Array[ExtResource("11_wonjp")]([])
 
 [node name="TestSword" type="Node3D"]
@@ -166,7 +166,7 @@ transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
 unique_name_in_owner = true
-transform = Transform3D(0.0707668, 0, -0.997493, 0, 1, 0, 0.997493, 0, 0.0707668, 9.0782, 1, 11.8994)
+transform = Transform3D(0.0707668, 0, -0.997493, 0, 1, 0, 0.997493, 0, 0.0707668, 1.02177, 1, 17.2811)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"
@@ -177,12 +177,12 @@ metadata/_edit_lock_ = true
 
 [node name="Billy" parent="." instance=ExtResource("12_oc725")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2892, 3.22573, 8.67693)
-brain = SubResource("Resource_l5y3a")
+brain = SubResource("Resource_h5h7l")
 
 [node name="Alice" parent="." instance=ExtResource("12_oc725")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13873, 0.144819, 9.1045)
-brain = SubResource("Resource_6rivy")
+brain = SubResource("Resource_wcgqs")
 
 [node name="John" parent="." instance=ExtResource("12_oc725")]
 transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, 8.99573, 9.53674e-07, -4.98607)
-brain = SubResource("Resource_v1gn1")
+brain = SubResource("Resource_defvv")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AIBrain" load_steps=5 format=3 uid="uid://bkvqf4y027iaj"]
+[gd_resource type="Resource" script_class="Brain" load_steps=5 format=3 uid="uid://bkvqf4y027iaj"]
 
 [ext_resource type="Script" path="res://Resource/AI/memory.gd" id="1_hy5j5"]
 [ext_resource type="Script" path="res://Resource/AI/brain.gd" id="2_vxytl"]

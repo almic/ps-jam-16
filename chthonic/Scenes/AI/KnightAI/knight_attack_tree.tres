@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AttackTree" load_steps=5 format=3 uid="uid://ev3bdehdmgif"]
+
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/AttackTree.gd" id="1_22ewb"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/AttackTree/AttackTreeNode.gd" id="1_fddlb"]
+[ext_resource type="Resource" uid="uid://behax7fplmvbi" path="res://Scenes/AI/KnightAI/pattern/basic_combo.tres" id="2_l4uxw"]
+
+[sub_resource type="Resource" id="Resource_b0elj"]
+script = ExtResource("1_fddlb")
+pattern = ExtResource("2_l4uxw")
+
+[resource]
+script = ExtResource("1_22ewb")
+nodes = Array[ExtResource("1_fddlb")]([SubResource("Resource_b0elj")])
