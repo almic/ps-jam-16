@@ -128,7 +128,7 @@ apply_delta_time = false
 
 [sub_resource type="Resource" id="Resource_81q6u"]
 script = ExtResource("12_fabnc")
-threshold = Vector3(0.75, 0, 0)
+threshold = Vector3(0.5, 0, 0)
 multiplier = Vector3(-1, 1, 1)
 delay = 1.0
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
@@ -161,7 +161,7 @@ apply_delta_time = false
 
 [sub_resource type="Resource" id="Resource_g84jb"]
 script = ExtResource("12_fabnc")
-threshold = Vector3(0.75, 0, 0)
+threshold = Vector3(0.5, 0, 0)
 multiplier = Vector3(1, 1, 1)
 delay = 1.0
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
@@ -192,7 +192,7 @@ apply_delta_time = false
 
 [sub_resource type="Resource" id="Resource_bqtas"]
 script = ExtResource("12_fabnc")
-threshold = Vector3(0.422, 0, 0)
+threshold = Vector3(0.281, 0, 0)
 multiplier = Vector3(-1, 1, 1)
 delay = 1.0
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
@@ -223,7 +223,7 @@ apply_delta_time = false
 
 [sub_resource type="Resource" id="Resource_i1bgu"]
 script = ExtResource("12_fabnc")
-threshold = Vector3(0.422, 0, 0)
+threshold = Vector3(0.281, 0, 0)
 multiplier = Vector3(1, 1, 1)
 delay = 1.0
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
