@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/AI/memory.gd" id="1_hy5j5"]
 [ext_resource type="Script" path="res://Scenes/AI/ai_brain.gd" id="2_vxytl"]
-[ext_resource type="Resource" uid="uid://c4srwj0d50ip0" path="res://Scenes/AI/KnightAI/target_memory.tres" id="3_g4mmw"]
-[ext_resource type="Resource" uid="uid://cww0y5rgjbh12" path="res://Scenes/AI/KnightAI/target_position_memory.tres" id="4_pmcko"]
+[ext_resource type="Resource" uid="uid://c4srwj0d50ip0" path="res://Scenes/AI/KnightAI/memory/target_memory.tres" id="3_g4mmw"]
+[ext_resource type="Resource" uid="uid://cww0y5rgjbh12" path="res://Scenes/AI/KnightAI/memory/target_position_memory.tres" id="4_pmcko"]
 
 [resource]
 script = ExtResource("2_vxytl")
