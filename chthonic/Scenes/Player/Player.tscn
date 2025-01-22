@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://jpy36xmtxw3a"]
+[gd_scene load_steps=8 format=3 uid="uid://jpy36xmtxw3a"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_dc3bm"]
 [ext_resource type="Resource" uid="uid://d33ug0rviwrmv" path="res://Resource/Input/Travel/action/move.tres" id="2_1s10k"]
 [ext_resource type="Resource" uid="uid://w35oih2j6fn2" path="res://Resource/Combat/Sword/WeaponSwordB.tres" id="2_irb0w"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="3_fg3q8"]
 [ext_resource type="Resource" uid="uid://diqrb1m2vn8wf" path="res://Resource/Input/Travel/TravelContext.tres" id="3_psik6"]
-[ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="4_8g4pi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4hfvj"]
 radius = 0.15
@@ -16,10 +15,9 @@ radius = 0.3
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_dc3bm")
-movement_speed = null
+movement_speed = 0.0
 move = ExtResource("2_1s10k")
 travel_mapping_context = ExtResource("3_psik6")
-combat_mapping_context = ExtResource("4_8g4pi")
 weapon = ExtResource("2_irb0w")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]

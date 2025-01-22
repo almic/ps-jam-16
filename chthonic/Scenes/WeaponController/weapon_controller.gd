@@ -4,7 +4,7 @@ class_name WeaponController extends CharacterBody3D
 const GROUP: String = "weapon_controller"
 
 ## Combat input context
-@export var combat_mapping_context: GUIDEMappingContext
+@export var combat_mapping_context: GUIDEMappingContext = preload("res://Resource/Input/CombatGeneral/CombatContext.tres")
 
 ## Currently owned weapon of this controller
 @export var weapon: CombatWeapon
@@ -61,6 +61,8 @@ func enter_combat(enable_input_context: bool = false) -> void:
     weapon_obj.anim_player.play(weapon.animation_library + "/" + weapon.anim_idle_name)
     if enable_input_context:
         GUIDE.enable_mapping_context(combat_mapping_context)
+        GUIDE.enable_mapping_context(weapon.mapping_context)
+
 
 ## Instructs the weapon controller to tear down combat state
 func exit_combat(disable_input_context: bool = false) -> void:

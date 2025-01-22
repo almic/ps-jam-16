@@ -26,4 +26,3 @@ func _process(_delta: float) -> void:
             for context in paused_contexts:
                 GUIDE.enable_mapping_context(context)
             paused_contexts.clear()
-

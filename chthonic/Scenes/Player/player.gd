@@ -13,7 +13,7 @@ var next_move: WeaponMove = null
 
 func _ready() -> void:
     super._ready()
-    exit_combat()
+    enter_combat()
 
 func _process(delta: float) -> void:
     if Engine.is_editor_hint():
@@ -73,4 +73,3 @@ func do_move_input(delta: float) -> void:
     var displacement = direction.normalized() * movement_speed
 
     velocity = displacement
-

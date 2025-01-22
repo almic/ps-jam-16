@@ -112,7 +112,6 @@ transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
 unique_name_in_owner = true
 transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.966, 1, -1.209)
-movement_speed = 1.5
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"

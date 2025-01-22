@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3aqc2rhbldfu"]
 
 [ext_resource type="Script" path="res://UI/Main/ui_main.gd" id="1_fjtwr"]
-[ext_resource type="FontFile" path="res://Fonts/xolonium/Xolonium.tres" id="1_pmisl"]
+[ext_resource type="FontFile" uid="uid://dutkr7x5o6y3r" path="res://Fonts/xolonium/Xolonium.tres" id="1_pmisl"]
 [ext_resource type="FontFile" uid="uid://b36pu67m73rrf" path="res://Fonts/montreal/Montreal-Bold.ttf" id="2_u15li"]
 [ext_resource type="Script" path="res://UI/Main/start_game.gd" id="4_sf7ie"]
 [ext_resource type="PackedScene" uid="uid://dj3yyg4d0kobh" path="res://Animations/Start Slice/SliceAnimationMakerScene.tscn" id="5_kuu7e"]
