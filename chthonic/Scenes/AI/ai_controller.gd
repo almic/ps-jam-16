@@ -5,6 +5,8 @@ class_name AIController extends WeaponController
 
 const SEEK_DISTANCE_SQR: float = pow(1, 2)
 
+@onready var grab_point: Marker3D = %GrabPoint
+
 @export_range(0.1, 3) var movement_speed: float = 1.3
 @export_range(0.1, 2) var rotate_speed: float = 1.8
 
@@ -12,6 +14,11 @@ var target: WeaponController = null
 var seek_rate: float = 2
 
 var seek_time: float = 0
+
+func _ready() -> void:
+    super._ready()
+    weapon_obj.position = grab_point.position
+    weapon_obj.rotation = grab_point.rotation
 
 func _physics_process(delta: float) -> void:
     if Engine.is_editor_hint():
@@ -51,3 +58,5 @@ func seek_target(delta: float) -> void:
 
     if direction.length_squared() > SEEK_DISTANCE_SQR:
         velocity += direction.normalized() * movement_speed
+    else:
+        enter_combat()
