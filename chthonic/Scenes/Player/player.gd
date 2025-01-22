@@ -9,7 +9,12 @@ class_name Player extends WeaponController
 @export var move: GUIDEAction
 @export var travel_mapping_context: GUIDEMappingContext
 
+var camera_locked: bool = false
 var next_move: WeaponMove = null
+
+@onready var first_person_marker: Marker3D = %FirstPersonMarker
+@onready var third_person_marker: Marker3D = %ThirdPersonMarker
+@onready var camera: Camera3D = %Camera
 
 func _ready() -> void:
     super._ready()
@@ -43,11 +48,32 @@ func _physics_process(delta: float) -> void:
 
 func enter_combat(_ignored: bool = false) -> void:
     super.enter_combat(true)
+    print("Player entering combat!")
+
+    # Move camera into position
+    camera.reparent(first_person_marker, true)
+    camera_locked = true # Lock camera motion
+    var tween = get_tree().create_tween()
+    tween.set_parallel()
+    tween.tween_property(camera, "position", Vector3(), 0.8)
+    tween.tween_property(camera, "rotation", Vector3(), 0.8)
+
+    # Make weapon follow mouse, turn off travel
     weapon_obj.user_input_enabled = true
     GUIDE.disable_mapping_context(travel_mapping_context)
 
 func exit_combat(_ignored: bool = false) -> void:
     super.exit_combat(true)
+
+    # Move camera into position
+    camera.reparent(third_person_marker, true)
+    camera_locked = false # Unlock camera motion
+    var tween = get_tree().create_tween()
+    tween.set_parallel()
+    tween.tween_property(camera, "position", Vector3(), 0.8)
+    tween.tween_property(camera, "rotation", Vector3(), 0.8)
+
+    # Stop weapon follow, enable travel
     weapon_obj.user_input_enabled = false
     GUIDE.enable_mapping_context(travel_mapping_context)
 
