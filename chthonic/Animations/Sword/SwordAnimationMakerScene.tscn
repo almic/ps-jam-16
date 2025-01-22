@@ -7,7 +7,7 @@
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7io4o"]
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(0.636234, 0.771375, 0.013683, -0.771202, 0.635402, 0.0388851, 0.0213007, -0.0352924, 0.99915, -0.0233276, 0.0206255, -0.015042)
+transform = Transform3D(0.642787, 0.766044, 0, -0.766044, 0.642787, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="SwordAnim" type="AnimationPlayer" parent="."]
 libraries = {
