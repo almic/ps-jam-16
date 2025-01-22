@@ -8,8 +8,7 @@ var next_move: WeaponMove = null
 func _ready() -> void:
     super._ready()
     weapon_obj.user_input_enabled = true
-    in_combat = true
-    stance = Combat.Stance.Idle
+    enter_combat()
 
 func _process(_delta: float) -> void:
     pass

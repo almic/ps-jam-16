@@ -51,6 +51,18 @@ func _should_act() -> bool:
 func _pick_move() -> WeaponMove:
     return null
 
+## Instructs the weapon controller to set up combat state
+func enter_combat() -> void:
+    in_combat = true
+    stance = Combat.Stance.Idle
+    weapon_obj.anim_player.play(weapon.animation_library + "/" + weapon.anim_idle_name)
+
+## Instructs the weapon controller to tear down combat state
+func exit_combat() -> void:
+    in_combat = false
+    stance = Combat.Stance.Unset
+    weapon_obj.anim_player.play(weapon.animation_library + "/RESET")
+
 ## Helper function to return either the weapon controller directly in front,
 ## or the nearest weapon controller. If no weapon controller is found, this
 ## returns `this` WeaponController, never null!
