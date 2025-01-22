@@ -82,9 +82,9 @@ func _should_act() -> bool:
     if not stance == Combat.Stance.Idle:
         return false
 
-    for move in weapon.move_set.moves:
-        if move.action.is_triggered():
-            next_move = move
+    for weapon_move in weapon.move_set.moves:
+        if weapon_move.action.is_triggered():
+            next_move = weapon_move
             print("Activating move " + next_move.name)
             return true
 
@@ -94,11 +94,10 @@ func _pick_move() -> WeaponMove:
     return next_move
 
 
-func do_move_input(delta: float) -> void:
+func do_move_input(_delta: float) -> void:
     if not is_on_floor():
         return
 
-    var camera = Combat.get_camera(self)
     var direction = camera.global_basis * move.value_axis_3d
     var displacement = direction.normalized() * movement_speed
 
