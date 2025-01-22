@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponMove" load_steps=4 format=3 uid="uid://dfskbrve28djx"]
 
-[ext_resource type="Script" path="res://Resource/Combat/Base/WeaponMove.gd" id="1_1d53s"]
+[ext_resource type="Script" path="res://Resource/Combat/Base/CombatWeapon/WeaponMove.gd" id="1_1d53s"]
 [ext_resource type="Resource" uid="uid://cum2k02tit1nn" path="res://Resource/Input/Sword/action/riposte_left.tres" id="1_lh2x3"]
 [ext_resource type="Resource" uid="uid://bi5ghraocahx8" path="res://Resource/Combat/Sword/moves/deflect_right.tres" id="2_k28d5"]
 
