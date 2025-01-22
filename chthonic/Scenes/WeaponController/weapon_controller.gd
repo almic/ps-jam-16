@@ -31,6 +31,9 @@ func _ready() -> void:
     add_child(weapon_obj)
 
 func _physics_process(_delta: float) -> void:
+    if Engine.is_editor_hint():
+        return
+
     if not in_combat:
         return
 
@@ -63,7 +66,6 @@ func enter_combat(enable_input_context: bool = false) -> void:
         GUIDE.enable_mapping_context(combat_mapping_context)
         GUIDE.enable_mapping_context(weapon.mapping_context)
 
-
 ## Instructs the weapon controller to tear down combat state
 func exit_combat(disable_input_context: bool = false) -> void:
     in_combat = false
@@ -71,6 +73,7 @@ func exit_combat(disable_input_context: bool = false) -> void:
     weapon_obj.anim_player.play(weapon.animation_library + "/RESET")
     if disable_input_context:
         GUIDE.disable_mapping_context(combat_mapping_context)
+        GUIDE.disable_mapping_context(weapon.mapping_context)
 
 ## Helper function to return either the weapon controller directly in front,
 ## or the nearest weapon controller. If no weapon controller is found, this

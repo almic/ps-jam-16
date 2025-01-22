@@ -13,7 +13,7 @@ var next_move: WeaponMove = null
 
 func _ready() -> void:
     super._ready()
-    enter_combat()
+    exit_combat()
 
 func _process(delta: float) -> void:
     if Engine.is_editor_hint():
@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
     # Process input per-frame, but doesn't do movement yet
     if not in_combat:
         do_move_input(delta)
+    elif velocity.length_squared() > 0:
+        velocity = Vector3()
 
     pass
 
@@ -34,7 +36,8 @@ func _physics_process(delta: float) -> void:
     if not in_combat and not is_on_floor():
         velocity += get_gravity() * delta
 
-    move_and_slide()
+    if velocity.length_squared() > 0:
+        move_and_slide()
 
     pass
 
@@ -47,6 +50,7 @@ func exit_combat(_ignored: bool = false) -> void:
     super.exit_combat(true)
     weapon_obj.user_input_enabled = false
     GUIDE.enable_mapping_context(travel_mapping_context)
+
 
 func _should_act() -> bool:
     if not stance == Combat.Stance.Idle:
