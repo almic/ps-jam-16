@@ -1,9 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=19 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
-[ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="2_6epq7"]
 [ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
-[ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="3_jdb5i"]
 [ext_resource type="PackedScene" uid="uid://b6te5oktps7pa" path="res://UI/Pause/UIPause.tscn" id="4_a6lhf"]
 [ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
 [ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="7_buvux"]
@@ -88,8 +86,6 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [node name="TestSword" type="Node3D"]
 script = ExtResource("1_va77i")
-combat_context = ExtResource("2_6epq7")
-sword_context = ExtResource("3_jdb5i")
 menu_context = ExtResource("2_8cov7")
 
 [node name="UIControl" type="Control" parent="."]
@@ -114,7 +110,9 @@ latitude = 30.0
 transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295, -117.942, -2.66037, 11.6219)
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
+unique_name_in_owner = true
 transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.966, 1, -1.209)
+movement_speed = 1.5
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"

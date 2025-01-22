@@ -3,6 +3,9 @@ class_name WeaponController extends CharacterBody3D
 
 const GROUP: String = "weapon_controller"
 
+## Combat input context
+@export var combat_mapping_context: GUIDEMappingContext
+
 ## Currently owned weapon of this controller
 @export var weapon: CombatWeapon
 
@@ -52,16 +55,20 @@ func _pick_move() -> WeaponMove:
     return null
 
 ## Instructs the weapon controller to set up combat state
-func enter_combat() -> void:
+func enter_combat(enable_input_context: bool = false) -> void:
     in_combat = true
     stance = Combat.Stance.Idle
     weapon_obj.anim_player.play(weapon.animation_library + "/" + weapon.anim_idle_name)
+    if enable_input_context:
+        GUIDE.enable_mapping_context(combat_mapping_context)
 
 ## Instructs the weapon controller to tear down combat state
-func exit_combat() -> void:
+func exit_combat(disable_input_context: bool = false) -> void:
     in_combat = false
     stance = Combat.Stance.Unset
     weapon_obj.anim_player.play(weapon.animation_library + "/RESET")
+    if disable_input_context:
+        GUIDE.disable_mapping_context(combat_mapping_context)
 
 ## Helper function to return either the weapon controller directly in front,
 ## or the nearest weapon controller. If no weapon controller is found, this

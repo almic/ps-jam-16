@@ -6,6 +6,9 @@ class_name CombatWeapon extends Resource
 ## Weapon's Move Set
 @export var move_set: WeaponMoveSet
 
+## Weapon's Input Mapping Context
+@export var mapping_context: GUIDEMappingContext
+
 ## Weapon's Scene
 @export var weapon_scene: PackedScene
 

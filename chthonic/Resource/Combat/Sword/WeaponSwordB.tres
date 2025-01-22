@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CombatWeapon" load_steps=5 format=3 uid="uid://w35oih2j6fn2"]
+[gd_resource type="Resource" script_class="CombatWeapon" load_steps=6 format=3 uid="uid://w35oih2j6fn2"]
 
 [ext_resource type="Resource" uid="uid://cupnp65bxxy3s" path="res://Resource/Combat/Sword/SwordMoveSet.tres" id="1_ttrux"]
 [ext_resource type="Script" path="res://Resource/Combat/Base/CombatWeapon.gd" id="1_vgxmm"]
+[ext_resource type="Resource" uid="uid://dluy646vxef2y" path="res://Resource/Input/Sword/SwordContext.tres" id="1_ypr5y"]
 [ext_resource type="PackedScene" uid="uid://cdal5w0ruhvi8" path="res://Objects/Weapon/sword_b/sword_b.tscn" id="3_xbceb"]
 [ext_resource type="Resource" uid="uid://5x1q40ipe1vp" path="res://Resource/Combat/Sword/SwordWeaponType.tres" id="4_kf8wj"]
 
@@ -9,6 +10,7 @@
 script = ExtResource("1_vgxmm")
 weapon_type = ExtResource("4_kf8wj")
 move_set = ExtResource("1_ttrux")
+mapping_context = ExtResource("1_ypr5y")
 weapon_scene = ExtResource("3_xbceb")
 animation_library = "SwordAnimations"
 anim_idle_name = "idle_float"

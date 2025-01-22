@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 
 func move_left_right() -> void:
 
-    var camera = get_tree().root.get_camera_3d()
+    var camera = Combat.get_camera(self)
     velocity = camera.global_basis * (left_right.value_axis_3d + Vector3(0, up_down.value_axis_3d.x, 0)) * movement_speed
 
     move_and_slide()

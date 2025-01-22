@@ -29,3 +29,10 @@ enum Stance {
     Deflected,
     Staggered
 }
+
+static var camera: Camera3D
+static func get_camera(node: Node3D) -> Camera3D:
+    if not camera:
+        camera = node.get_tree().root.get_camera_3d()
+    return camera
+

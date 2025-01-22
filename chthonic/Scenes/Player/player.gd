@@ -3,19 +3,50 @@
 
 class_name Player extends WeaponController
 
+@export_range(0.1, 2) var movement_speed: float = 1.5
+
+@export_category("Input")
+@export var move: GUIDEAction
+@export var travel_mapping_context: GUIDEMappingContext
+
 var next_move: WeaponMove = null
 
 func _ready() -> void:
     super._ready()
-    weapon_obj.user_input_enabled = true
-    enter_combat()
+    exit_combat()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+    if Engine.is_editor_hint():
+        return
+
+    # Process input per-frame, but doesn't do movement yet
+    if not in_combat:
+        do_move_input(delta)
+
     pass
 
 func _physics_process(delta: float) -> void:
+    if Engine.is_editor_hint():
+        return
+
     super._physics_process(delta)
+
+    if not in_combat and not is_on_floor():
+        velocity += get_gravity() * delta
+
+    move_and_slide()
+
     pass
+
+func enter_combat(_ignored: bool = false) -> void:
+    super.enter_combat(true)
+    weapon_obj.user_input_enabled = true
+    GUIDE.disable_mapping_context(travel_mapping_context)
+
+func exit_combat(_ignored: bool = false) -> void:
+    super.exit_combat(true)
+    weapon_obj.user_input_enabled = false
+    GUIDE.enable_mapping_context(travel_mapping_context)
 
 func _should_act() -> bool:
     if not stance == Combat.Stance.Idle:
@@ -32,5 +63,14 @@ func _should_act() -> bool:
 func _pick_move() -> WeaponMove:
     return next_move
 
-func _update_state(_delta: float) -> void:
-    pass
+
+func do_move_input(delta: float) -> void:
+    if not is_on_floor():
+        return
+
+    var camera = Combat.get_camera(self)
+    var direction = camera.global_basis * move.value_axis_3d
+    var displacement = direction.normalized() * movement_speed
+
+    velocity = displacement
+
