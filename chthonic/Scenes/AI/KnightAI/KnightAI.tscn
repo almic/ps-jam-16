@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cknaf05d751gx"]
+[gd_scene load_steps=6 format=3 uid="uid://cknaf05d751gx"]
 
-[ext_resource type="Script" path="res://Scenes/AI/ai_controller.gd" id="1_c7l00"]
+[ext_resource type="Script" path="res://Scenes/AI/KnightAI/knight_ai.gd" id="1_t6xx5"]
 [ext_resource type="PackedScene" uid="uid://b5jgtrh8yhjls" path="res://Objects/Character/knight_b/knight_b.tscn" id="2_3jm3e"]
 [ext_resource type="Resource" uid="uid://w35oih2j6fn2" path="res://Resource/Combat/Sword/WeaponSwordB.tres" id="2_8knng"]
+[ext_resource type="Resource" uid="uid://bkvqf4y027iaj" path="res://Scenes/AI/KnightAI/knight_brain.tres" id="2_j714w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m8v0r"]
 radius = 0.335
 height = 1.85
 
-[node name="AiController" type="CharacterBody3D"]
+[node name="KnightAI" type="CharacterBody3D"]
 collision_layer = 8
 collision_mask = 11
-script = ExtResource("1_c7l00")
+script = ExtResource("1_t6xx5")
+brain = ExtResource("2_j714w")
 weapon = ExtResource("2_8knng")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

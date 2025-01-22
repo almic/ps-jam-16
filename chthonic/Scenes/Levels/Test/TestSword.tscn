@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=30 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
@@ -9,7 +9,9 @@
 [ext_resource type="Shader" path="res://Scenes/Levels/Test/terrain_no_specular.gdshader" id="9_638ov"]
 [ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
 [ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
-[ext_resource type="PackedScene" uid="uid://cknaf05d751gx" path="res://Scenes/AI/AIController.tscn" id="12_oc725"]
+[ext_resource type="Script" path="res://Scenes/AI/memory.gd" id="11_wonjp"]
+[ext_resource type="Script" path="res://Scenes/AI/ai_brain.gd" id="12_8cq0g"]
+[ext_resource type="PackedScene" uid="uid://cknaf05d751gx" path="res://Scenes/AI/KnightAI/KnightAI.tscn" id="12_oc725"]
 
 [sub_resource type="Gradient" id="Gradient_des6i"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -84,6 +86,57 @@ detiling = 0.147
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_sxlsy")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mkksw")])
 
+[sub_resource type="Resource" id="Resource_yah75"]
+script = ExtResource("11_wonjp")
+poll_rate = 2.0
+threshold = 0.0
+
+[sub_resource type="Resource" id="Resource_4mux4"]
+script = ExtResource("11_wonjp")
+poll_rate = 1.0
+threshold = 15.0
+
+[sub_resource type="Resource" id="Resource_f2k4w"]
+script = ExtResource("12_8cq0g")
+state = 1
+target = SubResource("Resource_yah75")
+target_position = SubResource("Resource_4mux4")
+memories = Array[ExtResource("11_wonjp")]([])
+
+[sub_resource type="Resource" id="Resource_uf8jk"]
+script = ExtResource("11_wonjp")
+poll_rate = 2.0
+threshold = 0.0
+
+[sub_resource type="Resource" id="Resource_4i1ks"]
+script = ExtResource("11_wonjp")
+poll_rate = 1.0
+threshold = 15.0
+
+[sub_resource type="Resource" id="Resource_lctt3"]
+script = ExtResource("12_8cq0g")
+state = 1
+target = SubResource("Resource_uf8jk")
+target_position = SubResource("Resource_4i1ks")
+memories = Array[ExtResource("11_wonjp")]([])
+
+[sub_resource type="Resource" id="Resource_5vcfh"]
+script = ExtResource("11_wonjp")
+poll_rate = 2.0
+threshold = 0.0
+
+[sub_resource type="Resource" id="Resource_evwka"]
+script = ExtResource("11_wonjp")
+poll_rate = 1.0
+threshold = 15.0
+
+[sub_resource type="Resource" id="Resource_u7r82"]
+script = ExtResource("12_8cq0g")
+state = 1
+target = SubResource("Resource_5vcfh")
+target_position = SubResource("Resource_evwka")
+memories = Array[ExtResource("11_wonjp")]([])
+
 [node name="TestSword" type="Node3D"]
 script = ExtResource("1_va77i")
 menu_context = ExtResource("2_8cov7")
@@ -97,9 +150,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="UiPause" parent="UIControl" instance=ExtResource("4_a6lhf")]
 layout_mode = 1
+mouse_filter = 2
 
 [node name="DayNightEnvironment" parent="." instance=ExtResource("6_2rkfk")]
 transform = Transform3D(0.866021, 0.5, 0, -0.499997, 0.866025, 0, 0, 0, 1, 0, 0, 0)
@@ -111,7 +166,7 @@ transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
 unique_name_in_owner = true
-transform = Transform3D(0.323686, 0, 0.946165, 0, 1, 0, -0.946165, 0, 0.323686, 0.966, 1, -1.209)
+transform = Transform3D(0.0707668, 0, -0.997493, 0, 1, 0, 0.997493, 0, 0.0707668, 9.0782, 1, 11.8994)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"
@@ -120,8 +175,14 @@ assets = SubResource("Terrain3DAssets_87r0g")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="AiController" parent="." instance=ExtResource("12_oc725")]
+[node name="Billy" parent="." instance=ExtResource("12_oc725")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2892, 3.22573, 8.67693)
+brain = SubResource("Resource_f2k4w")
 
-[node name="AiController2" parent="." instance=ExtResource("12_oc725")]
+[node name="Alice" parent="." instance=ExtResource("12_oc725")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13873, 0.144819, 9.1045)
+brain = SubResource("Resource_lctt3")
+
+[node name="John" parent="." instance=ExtResource("12_oc725")]
+transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, 8.99573, 9.53674e-07, -4.98607)
+brain = SubResource("Resource_u7r82")

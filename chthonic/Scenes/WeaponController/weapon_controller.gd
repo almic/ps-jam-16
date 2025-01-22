@@ -78,7 +78,7 @@ func exit_combat(disable_input_context: bool = false) -> void:
 ## Helper function to return either the weapon controller directly in front,
 ## or the nearest weapon controller. If no weapon controller is found, this
 ## returns `this` WeaponController, never null!
-func find_opponent_controller() -> WeaponController:
+func find_opponent_controller(max_distance: float = 50) -> WeaponController:
     var space = get_world_3d().direct_space_state
     var query = PhysicsRayQueryParameters3D.create(
         self.position,
@@ -93,6 +93,7 @@ func find_opponent_controller() -> WeaponController:
             return result.collider
 
     # Search for closest WeaponController in the world
+    var max_dist_sqr = max_distance * max_distance
     var closest: WeaponController = null
     var closest_distance_sqr: float = INF
     for other in get_tree().get_nodes_in_group(GROUP):
@@ -101,6 +102,9 @@ func find_opponent_controller() -> WeaponController:
         var otherController = other as WeaponController
 
         var distance_sqr = (otherController.position - position).length_squared()
+        if distance_sqr > max_dist_sqr:
+            continue
+
         if distance_sqr < closest_distance_sqr:
             closest = otherController
             closest_distance_sqr = distance_sqr
