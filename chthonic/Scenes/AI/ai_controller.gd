@@ -22,15 +22,15 @@ const DEBUG_PRINT: bool = true
 ## How far to be aware of targets
 @export_range(0.01, 25) var search_radius: float = 15
 
-@export var brain: AIBrain
+@export var brain: Brain
 
 func _ready() -> void:
     super._ready()
     weapon_obj.position = grab_point.position
     weapon_obj.rotation = grab_point.rotation
 
-    brain = AIBrain.make_unique(brain)
-    brain.state = AIBrain.State.Idle
+    brain = Brain.make_unique(brain)
+    brain.state = Brain.State.Idle
 
     if DEBUG_PRINT:
         print("%s is ready!" % name)
@@ -47,27 +47,27 @@ func _physics_process(delta: float) -> void:
         velocity = Vector3.ZERO
 
     match brain.state:
-        AIBrain.State.Idle:
+        Brain.State.Idle:
             if seek_target(delta):
                 if DEBUG_PRINT:
                     print("%s is tracking a target" % name)
-                brain.state = AIBrain.State.Tracking
-        AIBrain.State.Tracking:
+                brain.state = Brain.State.Tracking
+        Brain.State.Tracking:
             if track_target(delta):
                 pass
             else:
                 if DEBUG_PRINT:
                     print("%s lost its target" % name)
                 clear_target()
-                brain.state = AIBrain.State.Idle
-        AIBrain.State.Arrived:
+                brain.state = Brain.State.Idle
+        Brain.State.Arrived:
             if check_target(delta):
                 pass
             else:
                 if DEBUG_PRINT:
                     print("%s lost its target" % name)
                 clear_target()
-                brain.state = AIBrain.State.Idle
+                brain.state = Brain.State.Idle
 
     move_and_slide()
 
@@ -115,7 +115,7 @@ func check_target(delta: float) -> bool:
         if DEBUG_PRINT:
             print("%s is too far from its target, tracking now" % name)
 
-        brain.state = AIBrain.State.Tracking
+        brain.state = Brain.State.Tracking
 
     return true
 
@@ -162,7 +162,7 @@ func track_target(delta: float) -> bool:
     else:
         if DEBUG_PRINT:
             print("%s arrived at my target!" % name)
-        brain.state = AIBrain.State.Arrived
+        brain.state = Brain.State.Arrived
         on_arrived()
 
     return true

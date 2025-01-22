@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Memory" load_steps=2 format=3 uid="uid://cww0y5rgjbh12"]
 
-[ext_resource type="Script" path="res://Scenes/AI/memory.gd" id="1_b38wb"]
+[ext_resource type="Script" path="res://Resource/AI/memory.gd" id="1_b38wb"]
 
 [resource]
 script = ExtResource("1_b38wb")

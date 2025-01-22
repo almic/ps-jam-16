@@ -1,4 +1,4 @@
-class_name AIBrain extends Resource
+class_name Brain extends Resource
 
 
 enum State {
@@ -30,7 +30,7 @@ func _init() -> void:
     pass
 
 ## Clones the memory so this brain is unique
-static func make_unique(brain: AIBrain) -> AIBrain:
+static func make_unique(brain: Brain) -> Brain:
     var new_brain = brain.duplicate(true)
     var index = 0
     for memory in brain.memories:
