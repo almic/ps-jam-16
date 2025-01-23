@@ -1,7 +1,8 @@
 extends Node3D
 
-const DEBUG_CONTEXT = preload("res://Resource/Input/Debug/DebugContext.tres")
-const ENABLE_DEBUG = preload("res://Resource/Input/Debug/action/enable_debug.tres")
+const DEBUG_CONTEXT: GUIDEMappingContext = preload("res://Resource/Input/Debug/DebugContext.tres")
+const ENABLE_DEBUG: GUIDEAction = preload("res://Resource/Input/Debug/action/enable_debug.tres")
+const TOGGLE_COMBAT: GUIDEAction = preload("res://Resource/Input/Debug/action/toggle_combat.tres")
 var debug_mode: bool = false
 
 @export var menu_context: GUIDEMappingContext
@@ -24,6 +25,9 @@ func _process(_delta: float) -> void:
         else:
             get_tree().call_group("debug", "enable_debug")
             debug_mode = true
+
+    if TOGGLE_COMBAT.is_triggered():
+        get_tree().call_group(GROUP.PLAYER, "toggle_combat")
 
     if escape.is_triggered():
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

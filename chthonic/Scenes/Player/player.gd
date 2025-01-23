@@ -123,6 +123,12 @@ func exit_combat() -> void:
     GUIDE.disable_mapping_context(weapon.mapping_context)
     GUIDE.enable_mapping_context(travel_mapping_context)
 
+func toggle_combat() -> void:
+    if in_combat:
+        exit_combat()
+    else:
+        enter_combat()
+
 ## Used by puppet to ask if it wants to act
 func _should_act() -> bool:
     if not puppet.stance == Combat.Stance.Idle:
