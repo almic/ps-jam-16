@@ -19,9 +19,17 @@ slide_bounds = AABB(0, -0.25, -0.4, 0, 0.5, 0.8)
 
 [node name="RigidBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629, 0, 0)
+top_level = true
 shape = SubResource("BoxShape3D_2boeh")
 
 [node name="silver_sword_low_poly" parent="." instance=ExtResource("1_hnr8b")]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="silver_sword_low_poly"]
+editor_description = "Moves the RigidBox shape with the animated sword skin
+"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629, 0, 0)
+remote_path = NodePath("../../RigidBox")
+update_scale = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="silver_sword_low_poly"]
 unique_name_in_owner = true

@@ -115,6 +115,7 @@ func _damage(amount: int) -> bool:
 func _die() -> void:
     if DEBUG_PRINT:
         print("%s gah! I die!" % name)
+    remove_from_group(GROUP.ALIVE)
     alive = false
 
 func _on_target_lost() -> void:
