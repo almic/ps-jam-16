@@ -7,6 +7,7 @@
 script = ExtResource("2_kfhl6")
 name = "DeflectLeft"
 action = ExtResource("1_onydg")
+damage = 0
 starting = 7
 anim_name = "deflect_left"
 after_enabled = false

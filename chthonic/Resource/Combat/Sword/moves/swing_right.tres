@@ -7,6 +7,7 @@
 script = ExtResource("2_ygr1f")
 name = "SwingRight"
 action = ExtResource("1_54osv")
+damage = 20
 starting = 2
 anim_name = "swing_right"
 after_enabled = false

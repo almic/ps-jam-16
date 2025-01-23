@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxipdytta44kq"]
+
+[ext_resource type="Script" path="res://Scenes/AI/PuppetAI/puppet_ai.gd" id="1_u0p7f"]
+[ext_resource type="Resource" uid="uid://cg0s8ywitumvc" path="res://Scenes/AI/PuppetAI/puppet_brain.tres" id="2_e73cr"]
+
+[node name="PuppetAi" type="CharacterBody3D"]
+script = ExtResource("1_u0p7f")
+brain = ExtResource("2_e73cr")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+unique_name_in_owner = true
+editor_description = "This will be childed to the AIController's GrabPoint, and then push its transforms to the player while being held."
+update_scale = false

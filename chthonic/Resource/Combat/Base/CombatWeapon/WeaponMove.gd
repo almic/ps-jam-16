@@ -2,6 +2,10 @@ class_name WeaponMove extends Resource
 
 @export var name: String
 @export var action: GUIDEAction
+
+## Damage to inflict when this move hits
+@export_range(0, 100) var damage: int
+
 ## The starting position of the weapon to activate this move
 @export var starting: Combat.MovePosition
 

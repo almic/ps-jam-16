@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Brain" load_steps=3 format=3 uid="uid://cg0s8ywitumvc"]
+
+[ext_resource type="Script" path="res://Resource/AI/memory.gd" id="1_exp8b"]
+[ext_resource type="Script" path="res://Resource/AI/brain.gd" id="2_okiv1"]
+
+[resource]
+script = ExtResource("2_okiv1")
+state = 0
+memories = Array[ExtResource("1_exp8b")]([])

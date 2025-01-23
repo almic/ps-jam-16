@@ -12,6 +12,9 @@ class_name CombatWeapon extends Resource
 ## Weapon's Scene
 @export var weapon_scene: PackedScene
 
+## Weapon's damage multiplier
+@export_range(0.01, 2) var damage_multiplier: float = 1
+
 ## Animation library name which holds the Move Set's animations
 ## Edit the CombatWeapon.gd script to add new animation libraries.
 @export_enum("SwordAnimations") var animation_library: String

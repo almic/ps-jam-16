@@ -8,6 +8,7 @@
 script = ExtResource("1_1d53s")
 name = "RiposteLeft"
 action = ExtResource("1_lh2x3")
+damage = 80
 starting = 9
 anim_name = "riposte_left"
 after_enabled = true

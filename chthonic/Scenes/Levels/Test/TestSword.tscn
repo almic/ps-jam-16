@@ -86,55 +86,55 @@ detiling = 0.147
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_sxlsy")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mkksw")])
 
-[sub_resource type="Resource" id="Resource_qixul"]
+[sub_resource type="Resource" id="Resource_m0reg"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_g2ppu"]
+[sub_resource type="Resource" id="Resource_ab6vh"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_h5h7l"]
+[sub_resource type="Resource" id="Resource_6lnre"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_qixul")
-target_position = SubResource("Resource_g2ppu")
+target = SubResource("Resource_m0reg")
+target_position = SubResource("Resource_ab6vh")
 memories = Array[ExtResource("11_wonjp")]([])
 
-[sub_resource type="Resource" id="Resource_bxtrv"]
+[sub_resource type="Resource" id="Resource_5f4oy"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_2vroo"]
+[sub_resource type="Resource" id="Resource_of0p6"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_wcgqs"]
+[sub_resource type="Resource" id="Resource_757xg"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_bxtrv")
-target_position = SubResource("Resource_2vroo")
+target = SubResource("Resource_5f4oy")
+target_position = SubResource("Resource_of0p6")
 memories = Array[ExtResource("11_wonjp")]([])
 
-[sub_resource type="Resource" id="Resource_dnf5m"]
+[sub_resource type="Resource" id="Resource_wtpm2"]
 script = ExtResource("11_wonjp")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_mhcyy"]
+[sub_resource type="Resource" id="Resource_uepny"]
 script = ExtResource("11_wonjp")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_defvv"]
+[sub_resource type="Resource" id="Resource_nbca7"]
 script = ExtResource("12_8cq0g")
 state = 1
-target = SubResource("Resource_dnf5m")
-target_position = SubResource("Resource_mhcyy")
+target = SubResource("Resource_wtpm2")
+target_position = SubResource("Resource_uepny")
 memories = Array[ExtResource("11_wonjp")]([])
 
 [node name="TestSword" type="Node3D"]
@@ -164,10 +164,6 @@ latitude = 30.0
 [node name="climbing_rock_low" parent="." instance=ExtResource("9_tt343")]
 transform = Transform3D(-0.133295, 0, -0.991077, 0, 1, 0, 0.991077, 0, -0.133295, -117.942, -2.66037, 11.6219)
 
-[node name="Player" parent="." instance=ExtResource("10_4ck11")]
-unique_name_in_owner = true
-transform = Transform3D(0.0707668, 0, -0.997493, 0, 1, 0, 0.997493, 0, 0.0707668, 1.02177, 1, 17.2811)
-
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/Levels/Test/terrain"
 material = SubResource("Terrain3DMaterial_5wqoa")
@@ -176,13 +172,16 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Billy" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2892, 3.22573, 8.67693)
-brain = SubResource("Resource_h5h7l")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5618, 0.6074, 9.79809)
+brain = SubResource("Resource_6lnre")
 
 [node name="Alice" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13873, 0.144819, 9.1045)
-brain = SubResource("Resource_wcgqs")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7425, 0.144819, 13.4877)
+brain = SubResource("Resource_757xg")
 
 [node name="John" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, 8.99573, 9.53674e-07, -4.98607)
-brain = SubResource("Resource_defvv")
+transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, -3.1764, -3.41061e-13, 0.432753)
+brain = SubResource("Resource_nbca7")
+
+[node name="Player" parent="." instance=ExtResource("10_4ck11")]
+transform = Transform3D(0.995497, 0, 0.0947863, 0, 1, 0, -0.0947863, 0, 0.995497, 1.67749, 0.570419, 0.107304)

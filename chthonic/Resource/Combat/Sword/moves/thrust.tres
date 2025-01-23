@@ -7,6 +7,7 @@
 script = ExtResource("2_5w474")
 name = "Thrust"
 action = ExtResource("1_42ktc")
+damage = 35
 starting = 4
 anim_name = "thrust"
 after_enabled = false

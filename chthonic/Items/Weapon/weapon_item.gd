@@ -3,6 +3,7 @@
 ## blade hit area for sparks.
 class_name WeaponItem extends CharacterBody3D
 
+
 ## The controller of this weapon
 @export var weapon_controller: WeaponController
 
@@ -23,14 +24,39 @@ var normal_movement_speed: float = 0
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var blade_area: Area3D = %BladeHitArea
 
+var targets: Array[Node3D] = []
+
 func _ready() -> void:
     if not anim_player or not blade_area:
         push_warning("Missing an AnimationPlayer or BladeHitArea!")
     normal_movement_speed = movement_speed
 
-func _physics_process(_delta: float) -> void:
+    blade_area.body_entered.connect(_on_blade_hit_area_body_entered)
+    blade_area.body_exited.connect(_on_blade_hit_area_body_exited)
+
+    blade_area.area_entered.connect(_on_blade_hit_area_entered)
+    blade_area.area_exited.connect(_on_blade_hit_area_exited)
+
+    blade_area.add_to_group(GROUP.WEAPON_BLADE)
+
+func _physics_process(delta: float) -> void:
     if user_input_enabled and weapon_controller.stance == Combat.Stance.Idle:
         move_left_right()
+
+    # Apply physics when not controlled
+    if not weapon_controller:
+        velocity += get_gravity() * delta
+        move_and_slide()
+        return
+
+    var to_erase: Array[Node3D] = []
+    for target in targets:
+        if target is WeaponController:
+            if target._hit_by(weapon_controller):
+                to_erase.append(target)
+
+    for target in to_erase:
+        targets.erase(target)
 
 func move_left_right() -> void:
 
@@ -84,3 +110,21 @@ func _stance_post_action() -> void:
     if not weapon_controller:
         return
     weapon_controller.stance = Combat.Stance.PostAction
+
+func _on_blade_hit_area_body_entered(body: Node3D) -> void:
+    # don't hurt our controller
+    if body == weapon_controller:
+        return
+
+    if not targets.has(body):
+        targets.append(body)
+
+func _on_blade_hit_area_body_exited(body: Node3D) -> void:
+    targets.erase(body)
+
+func _on_blade_hit_area_entered(area: Area3D) -> void:
+    if area.is_in_group(GROUP.WEAPON_BLADE):
+        print("Sparks fly!")
+
+func _on_blade_hit_area_exited(_area: Area3D) -> void:
+    pass

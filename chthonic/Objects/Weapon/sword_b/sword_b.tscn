@@ -29,8 +29,8 @@ libraries = {
 
 [node name="BladeHitArea" type="Area3D" parent="silver_sword_low_poly"]
 unique_name_in_owner = true
-collision_layer = 2
-collision_mask = 7
+collision_layer = 16
+collision_mask = 31
 
 [node name="BladeBox" type="CollisionShape3D" parent="silver_sword_low_poly/BladeHitArea"]
 transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.628956, 0, 0)

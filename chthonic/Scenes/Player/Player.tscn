@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://jpy36xmtxw3a"]
+[gd_scene load_steps=10 format=3 uid="uid://jpy36xmtxw3a"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_dc3bm"]
 [ext_resource type="Resource" uid="uid://d33ug0rviwrmv" path="res://Resource/Input/Travel/action/move.tres" id="2_1s10k"]
 [ext_resource type="Resource" uid="uid://w35oih2j6fn2" path="res://Resource/Combat/Sword/WeaponSwordB.tres" id="2_irb0w"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="3_fg3q8"]
 [ext_resource type="Resource" uid="uid://diqrb1m2vn8wf" path="res://Resource/Input/Travel/TravelContext.tres" id="3_psik6"]
+[ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="4_5ivk5"]
+[ext_resource type="PackedScene" uid="uid://cxipdytta44kq" path="res://Scenes/AI/PuppetAI/PuppetAI.tscn" id="6_gxoo2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4hfvj"]
 radius = 0.15
@@ -17,29 +19,42 @@ collision_layer = 2
 script = ExtResource("1_dc3bm")
 move = ExtResource("2_1s10k")
 travel_mapping_context = ExtResource("3_psik6")
+combat_mapping_context = ExtResource("4_5ivk5")
 weapon = ExtResource("2_irb0w")
+puppet_scene = ExtResource("6_gxoo2")
 
-[node name="SpringFP" type="SpringArm3D" parent="."]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+editor_description = "This pushes the player's position to the pivot point, so it only tracks the position and not the rotation.
+"
+remote_path = NodePath("../Pivot")
+update_rotation = false
+update_scale = false
+
+[node name="Pivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+editor_description = "This is a pivot point for camera rotation. It does not follow the player's transforms directly, instead relying on the RemoteTransform3D to apply just the position"
+
+[node name="SpringFP" type="SpringArm3D" parent="Pivot"]
 transform = Transform3D(-4.37114e-08, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-08, -3.9616e-08, 0, 0, 0)
 collision_mask = 13
 shape = SubResource("SphereShape3D_4hfvj")
 spring_length = 0.7
 
-[node name="FirstPersonMarker" type="Marker3D" parent="SpringFP"]
+[node name="FirstPersonMarker" type="Marker3D" parent="Pivot/SpringFP"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.93358, -0.358368, 0, 0.358368, 0.93358, 0, 0, 0)
 
-[node name="Camera" type="Camera3D" parent="SpringFP/FirstPersonMarker"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="SpringTP" type="SpringArm3D" parent="."]
+[node name="SpringTP" type="SpringArm3D" parent="Pivot"]
 transform = Transform3D(-4.37114e-08, -0.819152, 0.573576, 0, 0.573576, 0.819152, -1, 3.58063e-08, -2.50718e-08, 0, 0, 0)
 spring_length = 3.5
 
-[node name="ThirdPersonMarker" type="Marker3D" parent="SpringTP"]
+[node name="ThirdPersonMarker" type="Marker3D" parent="Pivot/SpringTP"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.819152, -0.573576, 0, 0.573576, 0.819152, 0, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="Pivot/SpringTP/ThirdPersonMarker"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_2erqy")
