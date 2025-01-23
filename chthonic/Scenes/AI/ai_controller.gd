@@ -30,6 +30,9 @@ var alive: bool = true
 func _ready() -> void:
     add_to_group(GROUP.ALIVE)
 
+    if Engine.is_editor_hint():
+        return
+
     brain = Brain.make_unique(brain)
     brain.state = Brain.State.Idle
 
