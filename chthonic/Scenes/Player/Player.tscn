@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://jpy36xmtxw3a"]
+[gd_scene load_steps=11 format=3 uid="uid://jpy36xmtxw3a"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_dc3bm"]
 [ext_resource type="Resource" uid="uid://d33ug0rviwrmv" path="res://Resource/Input/Travel/action/move.tres" id="2_1s10k"]
 [ext_resource type="Resource" uid="uid://w35oih2j6fn2" path="res://Resource/Combat/Sword/WeaponSwordB.tres" id="2_irb0w"]
+[ext_resource type="Resource" uid="uid://dyikrc458n5c2" path="res://Resource/Input/Travel/action/turn_camera.tres" id="3_c3s68"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="3_fg3q8"]
 [ext_resource type="Resource" uid="uid://diqrb1m2vn8wf" path="res://Resource/Input/Travel/TravelContext.tres" id="3_psik6"]
 [ext_resource type="Resource" uid="uid://b5djy0q4dciau" path="res://Resource/Input/CombatGeneral/CombatContext.tres" id="4_5ivk5"]
@@ -18,6 +19,7 @@ radius = 0.3
 collision_layer = 2
 script = ExtResource("1_dc3bm")
 move = ExtResource("2_1s10k")
+rotate_camera = ExtResource("3_c3s68")
 travel_mapping_context = ExtResource("3_psik6")
 combat_mapping_context = ExtResource("4_5ivk5")
 weapon = ExtResource("2_irb0w")
@@ -50,11 +52,10 @@ spring_length = 3.5
 
 [node name="ThirdPersonMarker" type="Marker3D" parent="Pivot/SpringTP"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.819152, -0.573576, 0, 0.573576, 0.819152, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot/SpringTP/ThirdPersonMarker"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_2erqy")

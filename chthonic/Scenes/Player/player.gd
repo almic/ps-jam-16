@@ -14,6 +14,7 @@ class_name Player extends CharacterBody3D
 
 @export_category("Input")
 @export var move: GUIDEAction
+@export var rotate_camera: GUIDEAction
 ## Travel input context
 @export var travel_mapping_context: GUIDEMappingContext
 ## Combat input context
@@ -60,6 +61,8 @@ func _process(delta: float) -> void:
 
     if not in_combat:
         _do_move_input(delta)
+
+    pivot.rotation_degrees.y += rotate_camera.value_axis_1d
 
     pass
 
@@ -139,13 +142,20 @@ func _pick_move() -> WeaponMove:
 
 
 func _do_move_input(_delta: float) -> void:
-    if not is_on_floor():
+    if puppet:
+        if not puppet.is_on_floor():
+            return
+    elif not is_on_floor():
         return
 
     var direction = camera.global_basis * move.value_axis_3d
+    direction.y = 0
     var displacement = direction.normalized() * movement_speed
 
-    velocity = displacement
+    if puppet:
+        puppet.velocity = displacement
+    else:
+        velocity = displacement
 
 ## TODO: Called by weapon controller when it takes damage from our puppet
 func _on_dealt_damage(_amount: int) -> void:
@@ -162,6 +172,19 @@ func _request_puppet_claim(host: WeaponController) -> bool:
 
     # then we assign the puppet's basis (position, rotation, scale)
     puppet.global_transform = host.global_transform
+
+    # queue a tween for the pickup
+    var tween = get_tree().create_tween()
+
+    tween.set_parallel(true)
+    tween.tween_property(self, "global_position", puppet.remote_transform_3d.global_position, 0.8)
+    tween.tween_property(self, "global_rotation", puppet.remote_transform_3d.global_rotation, 0.8)
+    tween.set_parallel(false)
+
+    tween.tween_callback(
+        func ():
+            puppet.remote_transform_3d.remote_path = get_path()
+    )
 
     # free the host, which is now just an empty Node3D
     host.queue_free()

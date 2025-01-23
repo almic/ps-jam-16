@@ -7,21 +7,21 @@
 [ext_resource type="Script" path="res://Resource/AI/memory.gd" id="3_uil0g"]
 [ext_resource type="Script" path="res://Resource/AI/brain.gd" id="4_whplq"]
 
-[sub_resource type="Resource" id="Resource_levt0"]
+[sub_resource type="Resource" id="Resource_5ss72"]
 script = ExtResource("3_uil0g")
 poll_rate = 2.0
 threshold = 0.0
 
-[sub_resource type="Resource" id="Resource_2c6qj"]
+[sub_resource type="Resource" id="Resource_w48v0"]
 script = ExtResource("3_uil0g")
 poll_rate = 1.0
 threshold = 15.0
 
-[sub_resource type="Resource" id="Resource_xmqlj"]
+[sub_resource type="Resource" id="Resource_0so54"]
 script = ExtResource("4_whplq")
 state = 1
-target = SubResource("Resource_levt0")
-target_position = SubResource("Resource_2c6qj")
+target = SubResource("Resource_5ss72")
+target_position = SubResource("Resource_w48v0")
 memories = Array[ExtResource("3_uil0g")]([])
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m8v0r"]
@@ -34,7 +34,7 @@ collision_mask = 11
 script = ExtResource("1_t6xx5")
 attack_tree = ExtResource("2_4b8co")
 weapon = ExtResource("2_8knng")
-brain = SubResource("Resource_xmqlj")
+brain = SubResource("Resource_0so54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)

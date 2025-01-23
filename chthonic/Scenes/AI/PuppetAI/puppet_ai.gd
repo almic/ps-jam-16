@@ -2,6 +2,7 @@
 ## AI controlled by the player
 class_name PuppetAI extends WeaponController
 
+
 @onready var remote_transform_3d: RemoteTransform3D = %RemoteTransform3D
 
 
@@ -12,6 +13,7 @@ func _claim(player: Player, host: WeaponController) -> void:
     master = player
     weapon = master.weapon
     weapon_obj = master.weapon_obj
+    weapon_obj.weapon_controller = self
     health = host.health
     i_frames = 60
 
@@ -38,9 +40,16 @@ func _ready() -> void:
 
     # Hold my master!
     remote_transform_3d.reparent(grab_point, false)
-    remote_transform_3d.remote_path = master.get_path()
 
     pass
+
+func _physics_process(delta: float) -> void:
+    # In order to allow the player to control the puppet, save the
+    # current velocity prior running the AI input, then add it back
+    var current_velocity: Vector3 = velocity
+    super._physics_process(delta)
+    velocity += current_velocity
+    move_and_slide()
 
 func enter_combat() -> void:
     super.enter_combat()
