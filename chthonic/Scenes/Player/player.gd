@@ -90,6 +90,9 @@ func enter_combat() -> void:
     print("Player entering combat!")
     in_combat = true
 
+    if puppet and not puppet.in_combat:
+        puppet.enter_combat()
+
     # Move camera into position
     camera.reparent(first_person_marker, true)
     camera_locked = true # Lock camera motion
@@ -108,6 +111,9 @@ func enter_combat() -> void:
 func exit_combat() -> void:
     print("Player leaving combat")
     in_combat = false
+
+    if puppet and puppet.in_combat:
+        puppet.exit_combat()
 
     # Move camera into position
     camera.reparent(third_person_marker, true)

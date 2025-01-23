@@ -53,11 +53,13 @@ func _physics_process(delta: float) -> void:
 
 func enter_combat() -> void:
     super.enter_combat()
-    master.enter_combat()
+    if not master.in_combat:
+        master.enter_combat()
 
 func exit_combat() -> void:
     super.exit_combat()
-    master.exit_combat()
+    if master.in_combat:
+        master.exit_combat()
 
 func _should_act() -> bool:
     return master._should_act()
@@ -67,6 +69,8 @@ func _pick_move() -> WeaponMove:
 
 func _die() -> void:
     alive = false
+    remote_transform_3d.remote_path = ""
+    remote_transform_3d.queue_free()
     master._on_puppet_died()
 
 func _damage(amount: int) -> bool:
