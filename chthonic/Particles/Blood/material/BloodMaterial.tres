@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://m0w1j01vlb23"]
+
+[ext_resource type="Shader" uid="uid://bw02aeyihtde3" path="res://Particles/Blood/material/Blood.tres" id="1_hi5se"]
+[ext_resource type="Texture2D" uid="uid://b4ij2qteebc0" path="res://Particles/Blood/material/BloodNoise.tres" id="2_sswaj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hi5se")
+shader_parameter/Noise_Variation = 0.213
+shader_parameter/Noise_Scaling = 0.234
+shader_parameter/Noise_Power = 1.6
+shader_parameter/Blood_Color = Color(1, 0, 0, 1)
+shader_parameter/Blood_Noise = ExtResource("2_sswaj")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdal5w0ruhvi8"]
+[gd_scene load_steps=7 format=3 uid="uid://cdal5w0ruhvi8"]
 
 [ext_resource type="PackedScene" uid="uid://cn0ifisvjfypt" path="res://Objects/Weapon/sword_b/silver_sword_low_poly.tscn" id="1_hnr8b"]
 [ext_resource type="Script" path="res://Items/Sword/sword_item.gd" id="1_ldc8a"]
+[ext_resource type="PackedScene" uid="uid://7y3aqalkiec8" path="res://Particles/Spark/Spark.tscn" id="2_15s4q"]
 [ext_resource type="AnimationLibrary" uid="uid://dfeykjn4p230l" path="res://Animations/Sword/SwordAnimations.tres" id="2_bmuuc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2boeh"]
@@ -13,6 +14,7 @@ size = Vector3(1.972, 0.095, 0.07)
 [node name="SwordB" type="CharacterBody3D"]
 collision_layer = 4
 script = ExtResource("1_ldc8a")
+spark_particles = ExtResource("2_15s4q")
 slide_bounds = AABB(0, -0.25, -0.4, 0, 0.5, 0.8)
 
 [node name="RigidBox" type="CollisionShape3D" parent="."]

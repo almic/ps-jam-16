@@ -1,0 +1,8 @@
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://b4ij2qteebc0"]
+
+[ext_resource type="FastNoiseLite" uid="uid://dmido6vgn2nr7" path="res://Particles/Blood/material/BloodNoiseNoise.tres" id="1_yxpkn"]
+
+[resource]
+width = 128
+height = 128
+noise = ExtResource("1_yxpkn")

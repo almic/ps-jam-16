@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://crcuktx1srs8r"]
+[gd_scene load_steps=31 format=3 uid="uid://crcuktx1srs8r"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Test/test_sword.gd" id="1_va77i"]
 [ext_resource type="Resource" uid="uid://8ixbtvbn85gs" path="res://Resource/Input/Menu/MenuContext.tres" id="2_8cov7"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Resource/AI/memory.gd" id="11_wonjp"]
 [ext_resource type="Script" path="res://Resource/AI/brain.gd" id="12_8cq0g"]
 [ext_resource type="PackedScene" uid="uid://cknaf05d751gx" path="res://Scenes/AI/KnightAI/KnightAI.tscn" id="12_oc725"]
+[ext_resource type="PackedScene" uid="uid://cdal5w0ruhvi8" path="res://Objects/Weapon/sword_b/sword_b.tscn" id="13_omw7m"]
 
 [sub_resource type="Gradient" id="Gradient_des6i"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -184,4 +185,7 @@ transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, -3.176
 brain = SubResource("Resource_pn8v0")
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
-transform = Transform3D(0.995497, 0, 0.0947863, 0, 1, 0, -0.0947863, 0, 0.995497, 1.67749, 0.570419, 0.107304)
+transform = Transform3D(0.995497, 0, 0.0947863, 0, 1, 0, -0.0947863, 0, 0.995497, -0.818005, 0.570419, 15.9496)
+
+[node name="SwordB" parent="." instance=ExtResource("13_omw7m")]
+transform = Transform3D(-0.0113619, -0.999935, 0, 0.999935, -0.0113619, 0, 0, 0, 1, -0.264061, 1.50751, 14.5153)

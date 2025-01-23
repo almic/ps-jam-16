@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://7y3aqalkiec8"]
+
+[ext_resource type="Shader" uid="uid://cdqkuc4r7n5qj" path="res://Particles/Spark/Spark.tres" id="1_63rbi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dfvt"]
+render_priority = 0
+shader = ExtResource("1_63rbi")
+
+[sub_resource type="Curve" id="Curve_sj7l0"]
+_data = [Vector2(0, 1), 0.0, -0.29, 0, 0, Vector2(0.5, 0.513029), -5.168, -3.41, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wgv1p"]
+width = 64
+curve = SubResource("Curve_sj7l0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ecm3w"]
+lifetime_randomness = 0.4
+direction = Vector3(0, 1, 0)
+spread = 60.0
+flatness = 0.5
+initial_velocity_min = -20.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_wgv1p")
+
+[sub_resource type="Curve" id="Curve_upjyn"]
+_data = [Vector2(0, 0), 0.0, 2.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_q4vvi"]
+shape = 0
+size = 0.05
+sections = 3
+section_length = 0.05
+section_segments = 2
+curve = SubResource("Curve_upjyn")
+
+[node name="Spark" type="GPUParticles3D"]
+material_override = SubResource("ShaderMaterial_8dfvt")
+cast_shadow = 0
+amount = 20
+lifetime = 0.24
+explosiveness = 0.9
+fixed_fps = 20
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_ecm3w")
+draw_pass_1 = SubResource("RibbonTrailMesh_q4vvi")

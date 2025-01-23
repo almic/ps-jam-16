@@ -11,12 +11,18 @@ class_name WeaponItem extends CharacterBody3D
 ## The controller of this weapon
 @export var weapon_controller: WeaponController
 
+## Spawned particles when hitting another blade
+@export var spark_particles: PackedScene
+
+
+@export_category("Screen Motion")
+## Movement speed
 @export var movement_speed: float = 1
 var normal_movement_speed: float = 0
 
+## Bounds of weapon movement
 @export var slide_bounds: AABB = AABB(Vector3(-1, -0.25, 0), Vector3(2, 0.5, 0.1))
 
-@export_category("Screen Motion")
 ## If the weapon movement tracks with user input. Also requires that the weapon controller
 ## is in an idle stance
 @export var user_input_enabled: bool = false
@@ -148,7 +154,15 @@ func _on_blade_hit_area_body_exited(body: Node3D) -> void:
 
 func _on_blade_hit_area_entered(area: Area3D) -> void:
     if area.is_in_group(GROUP.WEAPON_BLADE):
-        print("Sparks fly!")
+        var location := PHYSICS.intersection_location(blade_area, area)
+        if location.is_empty():
+            return
+
+        var sparks: GPUParticles3D = spark_particles.instantiate() as GPUParticles3D
+        sparks.one_shot = true
+        add_sibling(sparks)
+        sparks.global_position = location.point
+        sparks.global_rotation = location.normal
 
 func _on_blade_hit_area_exited(_area: Area3D) -> void:
     pass

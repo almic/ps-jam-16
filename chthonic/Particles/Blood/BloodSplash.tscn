@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp37y0skxskpj"]
+
+[ext_resource type="Material" uid="uid://m0w1j01vlb23" path="res://Particles/Blood/material/BloodMaterial.tres" id="1_yj2co"]
+
+[sub_resource type="Curve" id="Curve_4cnro"]
+max_value = 10.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 10), 32.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8d31e"]
+width = 32
+curve = SubResource("Curve_4cnro")
+
+[sub_resource type="Curve" id="Curve_6d7sf"]
+_data = [Vector2(0.00304879, 1), 0.0, 0.0, 0, 0, Vector2(0.7, 0), -2.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gdfj3"]
+width = 32
+curve = SubResource("Curve_6d7sf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oeliu"]
+particle_flag_damping_as_friction = true
+emission_shape = 1
+emission_sphere_radius = 0.1
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 10.618
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+damping_max = 10.0
+damping_curve = SubResource("CurveTexture_8d31e")
+scale_curve = SubResource("CurveTexture_gdfj3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_43t1m"]
+material = ExtResource("1_yj2co")
+size = Vector2(0.15, 0.25)
+
+[node name="BloodSplash" type="GPUParticles3D"]
+cast_shadow = 0
+amount = 25
+lifetime = 0.7
+explosiveness = 0.9
+fixed_fps = 20
+process_material = SubResource("ParticleProcessMaterial_oeliu")
+draw_pass_1 = SubResource("QuadMesh_43t1m")

@@ -7,8 +7,12 @@ class_name WeaponController extends AIController
 ## Currently owned weapon of this controller
 @export var weapon: CombatWeapon
 
+## Blood particle to spawn when taking damage
+@export var blood_particle: PackedScene
+
 ## The opponent collision mask to detect opponents
 @export_flags_3d_physics var opponent_mask: int
+
 
 ## Current stance of this controller
 var stance: Combat.Stance = Combat.Stance.Unset
@@ -89,6 +93,16 @@ func _hit_by(other: WeaponController) -> bool:
     else:
         # Take damage according to weapon multiplier
         damage = int(10 * other.weapon.damage_multiplier)
+
+    # Try to spawn blood
+    if damage > 0:
+        var location = PHYSICS.intersection_location(self, other.weapon_obj.blade_area)
+        if not location.is_empty():
+            var blood: GPUParticles3D = blood_particle.instantiate()
+            blood.one_shot = true
+            add_sibling(blood)
+            blood.global_position = location.point
+            blood.global_rotation = -location.normal
 
     if _damage(damage):
         _die.call_deferred()
