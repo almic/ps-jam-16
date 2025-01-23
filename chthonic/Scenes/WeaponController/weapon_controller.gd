@@ -122,7 +122,8 @@ func _next_target() -> Node3D:
     )
 
     if target is Player:
-        return target
+        if not target.puppet:
+            return target
 
     # Look for opponents to fight
     target = find_nearest_target(
