@@ -9,11 +9,11 @@ class_name CombatWeapon extends Resource
 ## Weapon's Input Mapping Context
 @export var mapping_context: GUIDEMappingContext
 
-## Weapon's Scene
-@export var weapon_scene: PackedScene
-
 ## Weapon's damage multiplier
 @export_range(0.01, 2) var damage_multiplier: float = 1
+
+## Weapon's Scene
+@export var weapon_scene: PackedScene
 
 ## Animation library name which holds the Move Set's animations
 ## Edit the CombatWeapon.gd script to add new animation libraries.
