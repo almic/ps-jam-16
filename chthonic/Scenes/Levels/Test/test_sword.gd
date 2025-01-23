@@ -9,7 +9,6 @@ var debug_mode: bool = false
 @export var escape: GUIDEAction = preload("res://Resource/Input/Menu/action/escape_back.tres")
 
 @onready var ui_control: Control = %UIControl
-@onready var player: Player = %Player
 
 var paused_contexts: Array[GUIDEMappingContext]
 

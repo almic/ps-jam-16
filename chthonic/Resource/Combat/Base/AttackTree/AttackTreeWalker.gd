@@ -39,11 +39,11 @@ func next() -> AttackDecision:
 
 ## Handles a DecisionPick, returning the first successful
 ## non-pick decision
-func handle_pick(decision: AttackDecision) -> AttackDecision:
-    if not decision is DecisionPick:
-        return decision
+func handle_pick(maybe_pick: AttackDecision) -> AttackDecision:
+    if not maybe_pick is DecisionPick:
+        return maybe_pick
 
-    var pick: DecisionPick = decision as DecisionPick
+    var pick: DecisionPick = maybe_pick as DecisionPick
 
     if not pick.second or pick.first_chance >= 1 or _rng.randf() <= pick.first_chance:
         return handle_pick(pick.first)
