@@ -13,7 +13,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, -0.872665)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -383,6 +383,43 @@ tracks/5/keys = {
 "points": PackedFloat32Array(-0.156634, -0.25, 0, 0.25, 0, 0.106023, -0.25, 0, 0.25, 0, -0.916481, -0.25, 0, 0.25, 0, -0.872665, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1, 2.5)
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.54, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_stance_pre_action"
+}, {
+"args": [],
+"method": &"_stance_action"
+}, {
+"args": [],
+"method": &"_stance_post_action"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.66, 0.92),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_begin_hit"
+}, {
+"args": [],
+"method": &"_end_hit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_l0xni"]
 resource_name = "riposte_right"
@@ -454,6 +491,43 @@ tracks/5/keys = {
 "points": PackedFloat32Array(-0.165803, -0.25, 0, 0.25, 0, 0.0678757, -0.25, 0, 0.25, 0, -0.919052, -0.25, 0, 0.25, 0, -0.872665, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1, 2.5)
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.54, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_stance_pre_action"
+}, {
+"args": [],
+"method": &"_stance_action"
+}, {
+"args": [],
+"method": &"_stance_post_action"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.66, 0.92),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_begin_hit"
+}, {
+"args": [],
+"method": &"_end_hit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ruu1k"]
 length = 2.5
@@ -523,6 +597,43 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 3, 3, 2, 2, 2, 0),
 "points": PackedFloat32Array(-0.873617, -0.25, 0, 0.25, 0, -1.61589, -0.043503, -0.0464122, 0.043503, 0.0464122, -1.00321, -0.0104142, -0.137553, 0.0104142, 0.137553, -0.598209, -0.0238666, -0.16118, 0.0467279, 0.315571, -0.336925, -0.0980839, 0.000142903, 0.776628, -0.0011315, -0.879122, -0.354527, 0.617513, 0.135522, -0.236052, -0.873617, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.36, 0.46, 0.5, 0.8, 1.84, 2.5)
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.38, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_stance_pre_action"
+}, {
+"args": [],
+"method": &"_stance_action"
+}, {
+"args": [],
+"method": &"_stance_post_action"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.44, 0.88),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_begin_hit"
+}, {
+"args": [],
+"method": &"_end_hit"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_p18ym"]
@@ -595,6 +706,43 @@ tracks/5/keys = {
 "points": PackedFloat32Array(-0.872665, -0.25, 0, 0.25, 0, -1.51844, -0.25, 0, 0.25, 0, -2.51049, -0.25, 0, 0.25, 0, -0.872665, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1, 2.5)
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.52, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_stance_pre_action"
+}, {
+"args": [],
+"method": &"_stance_action"
+}, {
+"args": [],
+"method": &"_stance_post_action"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_begin_hit"
+}, {
+"args": [],
+"method": &"_end_hit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_0uv8v"]
 length = 2.0
@@ -664,6 +812,43 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2),
 "points": PackedFloat32Array(-0.872665, -0.25, 0, 0.11591, -0.773438, -0.0394444, -0.0248818, -0.0091425, 0.055146, 0.0202627, -0.0394444, -0.164281, 0.00439198, 0.104671, -0.00279833, -0.0200142, -0.102267, 3.30963e-05, 0.233636, -7.56104e-05, -0.0298975, -0.0389848, 0.0227298, 0.161501, -0.0941617, -0.872665, -0.310661, 0.913848, 0.0355475, -0.104568),
 "times": PackedFloat32Array(0, 0.5, 1, 1.2, 1.5, 2)
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.68, 1.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_stance_pre_action"
+}, {
+"args": [],
+"method": &"_stance_action"
+}, {
+"args": [],
+"method": &"_stance_post_action"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.96, 1.28),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_begin_hit"
+}, {
+"args": [],
+"method": &"_end_hit"
+}]
 }
 
 [resource]

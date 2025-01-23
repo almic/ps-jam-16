@@ -4,6 +4,10 @@
 class_name WeaponItem extends CharacterBody3D
 
 
+@onready var anim_player: AnimationPlayer = %AnimationPlayer
+@onready var blade_area: Area3D = %BladeHitArea
+
+
 ## The controller of this weapon
 @export var weapon_controller: WeaponController
 
@@ -13,18 +17,19 @@ var normal_movement_speed: float = 0
 @export var slide_bounds: AABB = AABB(Vector3(-1, -0.25, 0), Vector3(2, 0.5, 0.1))
 
 @export_category("Screen Motion")
-## If the weapon movement tracks with user input. Also requires that the method
-## `_can_move()` return `true` to track movement.
+## If the weapon movement tracks with user input. Also requires that the weapon controller
+## is in an idle stance
 @export var user_input_enabled: bool = false
+
 ## Axis2D action that provides left/ right motion
 @export var left_right: GUIDEAction = preload("res://Resource/Input/CombatGeneral/action/left_right.tres")
+
 ## Axis2D action that provides up/down motion
 @export var up_down: GUIDEAction = preload("res://Resource/Input/CombatGeneral/action/up_down.tres")
 
-@onready var anim_player: AnimationPlayer = %AnimationPlayer
-@onready var blade_area: Area3D = %BladeHitArea
 
-var targets: Array[Node3D] = []
+var _targets: Array[Node3D] = []
+var _hit_enabled: bool = false
 
 func _ready() -> void:
     if not anim_player or not blade_area:
@@ -39,6 +44,9 @@ func _ready() -> void:
 
     blade_area.add_to_group(GROUP.WEAPON_BLADE)
 
+    # Always reset hit state when animation changes
+    anim_player.animation_changed.connect(_end_hit)
+
 func _physics_process(delta: float) -> void:
     if user_input_enabled and weapon_controller.stance == Combat.Stance.Idle:
         move_left_right()
@@ -49,14 +57,9 @@ func _physics_process(delta: float) -> void:
         move_and_slide()
         return
 
-    var to_erase: Array[Node3D] = []
-    for target in targets:
-        if target is WeaponController:
-            if target._hit_by(weapon_controller):
-                to_erase.append(target)
-
-    for target in to_erase:
-        targets.erase(target)
+    # Hit per frame
+    if _hit_enabled:
+        _hit_once()
 
 func move_left_right() -> void:
 
@@ -111,16 +114,37 @@ func _stance_post_action() -> void:
         return
     weapon_controller.stance = Combat.Stance.PostAction
 
+## For animations, call to send a single hit notification to all bodies.
+## If the body returns `true` from it's _hit_by() method, the weapon "forgets"
+## about the target and stops notifying it until it intersects again
+func _hit_once() -> void:
+    var to_erase: Array[Node3D] = []
+    for target in _targets:
+        if target is WeaponController:
+            if target._hit_by(weapon_controller):
+                to_erase.append(target)
+
+    for target in to_erase:
+        _targets.erase(target)
+
+## For animations, call to send a hit notification each frame to all bodies
+func _begin_hit() -> void:
+    _hit_enabled = true
+
+## For animations, call to stop sending hit notifications each frame to all bodies
+func _end_hit() -> void:
+    _hit_enabled = false
+
 func _on_blade_hit_area_body_entered(body: Node3D) -> void:
     # don't hurt our controller
     if body == weapon_controller:
         return
 
-    if not targets.has(body):
-        targets.append(body)
+    if not _targets.has(body):
+        _targets.append(body)
 
 func _on_blade_hit_area_body_exited(body: Node3D) -> void:
-    targets.erase(body)
+    _targets.erase(body)
 
 func _on_blade_hit_area_entered(area: Area3D) -> void:
     if area.is_in_group(GROUP.WEAPON_BLADE):
