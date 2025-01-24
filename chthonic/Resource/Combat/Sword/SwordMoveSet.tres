@@ -13,4 +13,4 @@
 
 [resource]
 script = ExtResource("3_ewj5g")
-moves = Array[ExtResource("1_xkqf3")]([ExtResource("2_fks8x"), ExtResource("3_bmgfv"), ExtResource("4_tgeq8"), ExtResource("5_76tw6"), ExtResource("6_tafau"), ExtResource("7_1e3ig"), ExtResource("8_18j2k"), ExtResource("9_b5xuv")])
+moves = Array[ExtResource("1_xkqf3")]([ExtResource("8_18j2k"), ExtResource("9_b5xuv"), ExtResource("6_tafau"), ExtResource("7_1e3ig"), ExtResource("2_fks8x"), ExtResource("3_bmgfv"), ExtResource("5_76tw6"), ExtResource("4_tgeq8")])

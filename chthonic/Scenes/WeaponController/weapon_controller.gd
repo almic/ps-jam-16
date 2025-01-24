@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 
     if _should_act():
         current_move = _pick_move()
-        stance = Combat.Stance.Action
+        stance = Combat.Stance.PreAction
         weapon_obj.anim_player.play(weapon.animation_library + "/" + current_move.anim_name)
 
 ## Called by weapons when their blade hitbox collides with us. Return `true` to

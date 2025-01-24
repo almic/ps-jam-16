@@ -11,6 +11,9 @@ class_name TriggerAccumulator extends GUIDETrigger
 ## How long to wait after actuation stops before resetting accumulation
 @export var delay: float = 0
 
+## When this activates, how long to stay activated
+@export var remember_time: float = 0
+
 ## A list of required actions that must be triggered before accumulating.
 ## Leave empty to ignore.
 @export var requirements: Array[GUIDEAction] = []
@@ -18,8 +21,14 @@ class_name TriggerAccumulator extends GUIDETrigger
 
 var _accumulated: Vector3 = Vector3(0, 0, 0)
 var _reset_timer: float = 0
+var _remember_timer: float = 0
 
 func _update_state(input: Vector3, delta: float, value_type: GUIDEAction.GUIDEActionValueType) -> GUIDETriggerState:
+    if _remember_timer > 0:
+        _remember_timer -= delta
+        if _remember_timer > 0:
+            return GUIDETriggerState.TRIGGERED
+
     # Ensure requirements are presently triggered before doing anything
     if not requirements.is_empty():
         for req in requirements:
@@ -46,6 +55,7 @@ func _update_state(input: Vector3, delta: float, value_type: GUIDEAction.GUIDEAc
     _accumulated.z += input.z * multiplier.z
 
     if meets_threshold():
+        _remember_timer = remember_time
         _reset()
         return GUIDETriggerState.TRIGGERED
 

@@ -131,6 +131,7 @@ script = ExtResource("12_fabnc")
 threshold = Vector3(0.5, 0, 0)
 multiplier = Vector3(-1, 1, 1)
 delay = 1.0
+remember_time = 0.5
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
 actuation_threshold = 0.0
 
@@ -164,6 +165,7 @@ script = ExtResource("12_fabnc")
 threshold = Vector3(0.5, 0, 0)
 multiplier = Vector3(1, 1, 1)
 delay = 1.0
+remember_time = 0.5
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
 actuation_threshold = 0.0
 
@@ -195,6 +197,7 @@ script = ExtResource("12_fabnc")
 threshold = Vector3(0.281, 0, 0)
 multiplier = Vector3(-1, 1, 1)
 delay = 1.0
+remember_time = 0.5
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
 actuation_threshold = 0.0
 
@@ -226,6 +229,7 @@ script = ExtResource("12_fabnc")
 threshold = Vector3(0.281, 0, 0)
 multiplier = Vector3(1, 1, 1)
 delay = 1.0
+remember_time = 0.5
 requirements = Array[ExtResource("11_qdfp1")]([ExtResource("2_is67q")])
 actuation_threshold = 0.0
 

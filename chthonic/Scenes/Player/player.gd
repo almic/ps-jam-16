@@ -34,6 +34,10 @@ var next_move: WeaponMove = null
 ## Reference to the WeaponItem of the actual weapon object
 var weapon_obj: WeaponItem
 
+## Track the current move's index position in the move set, used for priority
+## overriding when two moves share inputs
+var move_index: int = -1
+
 ## Tracks combat state
 var in_combat: bool = false
 
@@ -137,14 +141,34 @@ func toggle_combat() -> void:
 
 ## Used by puppet to ask if it wants to act
 func _should_act() -> bool:
+    ## Activate higher priority moves during pre-action
+    ## Remember, priorities are in the WeaponMoveSet resource! Not input!
+    if puppet.stance == Combat.Stance.PreAction and puppet.current_move:
+        var idx: int = 0
+        for weapon_move in weapon.move_set.moves:
+            if idx >= move_index:
+                break
+            if weapon_move.action.is_triggered():
+                next_move = weapon_move
+                move_index = idx
+                return true
+            idx += 1
+
     if not puppet.stance == Combat.Stance.Idle:
         return false
 
+    # These are from idle only
+    var index: int = 0
     for weapon_move in weapon.move_set.moves:
+        if weapon_move.after_enabled:
+            continue
+
         if weapon_move.action.is_triggered():
             next_move = weapon_move
-            print("Puppeting move " + next_move.name)
+            move_index = index
             return true
+
+        index += 1
 
     return false
 
