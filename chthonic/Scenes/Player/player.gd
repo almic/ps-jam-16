@@ -82,7 +82,10 @@ func _physics_process(delta: float) -> void:
         velocity += get_gravity() * delta
 
     if velocity.length_squared() > 0:
+        var curr_pos = self.global_position
         move_and_slide()
+        var distance_trav = self.global_position - curr_pos
+        distance_trav.y = 0
 
 ## Called by the puppet when it enters combat
 func enter_combat() -> void:

@@ -13,6 +13,8 @@ var debug_mode: bool = false
 
 var paused_contexts: Array[GUIDEMappingContext]
 
+
+
 func _ready() -> void:
     GUIDE.enable_mapping_context(DEBUG_CONTEXT)
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bll1g6dcrj4n5" path="res://Scenes/Environment/Environment.tscn" id="6_2rkfk"]
 [ext_resource type="Texture2D" uid="uid://diq2l5pln62he" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Diffuse.png.PNG" id="7_buvux"]
 [ext_resource type="Texture2D" uid="uid://duh8tngr75my2" path="res://Objects/Natural/climbing_rock/texture/Rock_01_03_Normal.png.PNG" id="8_abptj"]
-[ext_resource type="Shader" path="res://Scenes/Levels/Test/terrain_no_specular.gdshader" id="9_638ov"]
+[ext_resource type="Shader" path="res://Shader/terrain_no_specular.gdshader" id="9_638ov"]
 [ext_resource type="PackedScene" uid="uid://bvxh6e42hpqht" path="res://Objects/Natural/climbing_rock/climbing_rock_low.tscn" id="9_tt343"]
 [ext_resource type="PackedScene" uid="uid://jpy36xmtxw3a" path="res://Scenes/Player/Player.tscn" id="10_4ck11"]
 [ext_resource type="Script" path="res://Resource/AI/memory.gd" id="11_wonjp"]
