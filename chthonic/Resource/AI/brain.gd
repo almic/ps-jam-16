@@ -38,4 +38,3 @@ static func make_unique(brain: Brain) -> Brain:
         index += 1
 
     return new_brain
-

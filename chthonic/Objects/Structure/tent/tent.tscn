@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://d2lw4av5mvwxn"]
+[gd_scene load_steps=6 format=4 uid="uid://d2lw4av5mvwxn"]
 
 [ext_resource type="Material" uid="uid://cm5ojlo0qq1xf" path="res://Objects/Structure/tent/material/BASE.tres" id="1_ipjdj"]
 
@@ -34,9 +34,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4yo8v")
 
-[node name="Tent" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7e2av"]
+size = Vector3(5.00085, 3.57861, 3.65565)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqcqb"]
+radius = 0.865505
+
+[node name="Tent" type="CharacterBody3D"]
 
 [node name="BASE_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, 100, 0, 100, 0, -100, 0, -4.37114e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_gyv5c")
 skeleton = NodePath("")
+
+[node name="TentCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0643921, 1.79622, -0.192513)
+shape = SubResource("BoxShape3D_7e2av")
+
+[node name="TentDoor" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0784882, 0.43133, 1.42792)
+shape = SubResource("CapsuleShape3D_hqcqb")

@@ -8,6 +8,7 @@ class_name Player extends CharacterBody3D
 @onready var third_person_marker: Marker3D = %ThirdPersonMarker
 @onready var camera: Camera3D = %Camera
 @onready var pivot: Node3D = %Pivot
+@onready var infini_level: Node3D = $".."
 
 
 @export_range(0.1, 2) var movement_speed: float = 1.5
@@ -43,6 +44,7 @@ var in_combat: bool = false
 
 func _ready() -> void:
     add_to_group(GROUP.PLAYER)
+
 
     weapon_obj = weapon.weapon_scene.instantiate() as WeaponItem
     add_child(weapon_obj)
@@ -81,11 +83,12 @@ func _physics_process(delta: float) -> void:
     if not puppet and not is_on_floor():
         velocity += get_gravity() * delta
 
-    if velocity.length_squared() > 0:
-        var curr_pos = self.global_position
+    if velocity.length_squared() > 0: #updates player position, calculates distance traveled by z vector
+        var curr_pos = self.global_position.z
         move_and_slide()
-        var distance_trav = self.global_position - curr_pos
-        distance_trav.y = 0
+        var trav_diff = self.global_position.z - curr_pos
+        infini_level.total_distance_traveled = (infini_level.total_distance_traveled) + trav_diff
+        infini_level.distance_trav += trav_diff
 
 ## Called by the puppet when it enters combat
 func enter_combat() -> void:
