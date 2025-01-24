@@ -23,6 +23,13 @@ var weapon_obj: WeaponItem
 ## The currently playing weapon move
 var current_move: WeaponMove
 
+## The result of the current move, changes to Unset when the animation completes
+## or a new move is triggered. Will never be Miss.
+var current_move_result: Combat.MoveResult = Combat.MoveResult.Unset
+
+## For completeness, I don't think this will be used anywhere
+var last_move_result: Combat.MoveResult = Combat.MoveResult.Unset
+
 ## When true, activates physics process to check for actions
 var in_combat: bool = false
 
@@ -60,11 +67,19 @@ func _physics_process(delta: float) -> void:
     # Change to idle
     if current_move and weapon_obj.anim_player.current_animation == "":
         stance = Combat.Stance.Idle
+
+        if current_move_result == Combat.MoveResult.Unset:
+            last_move_result = Combat.MoveResult.Miss
+        else:
+            last_move_result = current_move_result
+
         current_move = null
+        current_move_result = Combat.MoveResult.Unset
         weapon_obj.anim_player.play(weapon.animation_library + "/" + weapon.anim_idle_name)
 
     if _should_act():
         current_move = _pick_move()
+        current_move_result = Combat.MoveResult.Unset
         stance = Combat.Stance.PreAction
         weapon_obj.anim_player.play(weapon.animation_library + "/" + current_move.anim_name)
 
@@ -77,6 +92,9 @@ func _hit_by(other: WeaponController) -> bool:
     i_frames = 30
     var damage: int = 0
     var hit_taken: bool = false
+
+    ## NOTE: maybe someday a hit can be rejected?
+    other.current_move_result = Combat.MoveResult.Hit
 
     if other.current_move:
         match other.stance:

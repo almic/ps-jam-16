@@ -14,5 +14,3 @@ anim_name = "riposte_left"
 after_enabled = true
 after_move = ExtResource("2_k28d5")
 after_result = 2
-after_wait = 2.0
-after_time = 1.0

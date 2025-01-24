@@ -12,5 +12,3 @@ starting = 3
 anim_name = "swing_left"
 after_enabled = false
 after_result = 0
-after_wait = 0.0
-after_time = 0.0

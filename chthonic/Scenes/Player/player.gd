@@ -154,11 +154,44 @@ func _should_act() -> bool:
         for weapon_move in weapon.move_set.moves:
             if idx >= move_index:
                 break
+
+            # NOTE: cannot trigger follow-ups in PreAction
+            if weapon_move.after_enabled:
+                idx += 1
+                continue
+
             if weapon_move.action.is_triggered():
                 next_move = weapon_move
                 move_index = idx
                 return true
+
             idx += 1
+
+    # Follow-up moves which can be activated during post-action
+    if puppet.stance == Combat.Stance.PostAction and puppet.current_move:
+        var idx: int = 0
+        for weapon_move in weapon.move_set.moves:
+            if idx >= move_index:
+                break
+
+            if not weapon_move.after_enabled or not weapon_move.after_move == puppet.current_move:
+                idx += 1
+                continue
+
+            if not weapon_move.action.is_triggered():
+                idx += 1
+                continue
+
+            if (not weapon_move.after_result == Combat.MoveResult.Unset
+                and not puppet.current_move_result == weapon_move.after_result
+                ):
+                idx += 1
+                continue
+
+            # Triggered and possible follow-up move
+            next_move = weapon_move
+            move_index = idx
+            return true
 
     if not puppet.stance == Combat.Stance.Idle:
         return false
@@ -167,13 +200,13 @@ func _should_act() -> bool:
     var index: int = 0
     for weapon_move in weapon.move_set.moves:
         if weapon_move.after_enabled:
+            index += 1
             continue
 
         if weapon_move.action.is_triggered():
             next_move = weapon_move
             move_index = index
             return true
-
         index += 1
 
     return false

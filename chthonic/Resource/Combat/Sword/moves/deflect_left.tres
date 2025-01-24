@@ -12,5 +12,3 @@ starting = 7
 anim_name = "deflect_left"
 after_enabled = false
 after_result = 0
-after_wait = 0.0
-after_time = 0.0

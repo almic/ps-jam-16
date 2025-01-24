@@ -21,14 +21,10 @@ class_name WeaponMove extends Resource
 ## Only allow this action to follow another
 @export var after_enabled: bool
 
-## The specified move this move must follow
+## The specified move this move must follow. Must have `after_enabled` set to
+## `true` for this to take effect.
 @export var after_move: WeaponMove
 
-## The specified move must have this result
+## The specified move must have this result. Valid values are `Unset` and `Hit`.
+## Must have `after_enabled` set to`true` for this to take effect.
 @export var after_result: Combat.MoveResult
-
-## Must wait at least this long before executing after the specified move
-@export_range(0, 5, 0.1) var after_wait: float
-
-## Must execute within this amount of time after the wait period
-@export_range(0, 2, 0.1) var after_time: float
