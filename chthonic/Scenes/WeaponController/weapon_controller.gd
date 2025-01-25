@@ -44,16 +44,13 @@ func _ready() -> void:
     weapon_obj = weapon.weapon_scene.instantiate()
     weapon_obj.weapon_controller = self
 
-    weapon_obj.position = grab_point.position
-    weapon_obj.rotation = grab_point.rotation
-
-    add_child(weapon_obj)
+    grab_point.add_child(weapon_obj)
 
 func _physics_process(delta: float) -> void:
+    super._physics_process(delta)
+
     if Engine.is_editor_hint():
         return
-
-    super._physics_process(delta)
 
     if i_frames > 0:
         i_frames -= 1
@@ -123,7 +120,7 @@ func _hit_by(other: WeaponController) -> bool:
             blood.global_rotation = -location.normal
 
     if _damage(damage):
-        _die.call_deferred()
+        die.call_deferred()
 
     # Probably a terrible idea. This is spaghetti. Oh well!
     if other is PuppetAI:
@@ -173,10 +170,6 @@ func _pick_move() -> WeaponMove:
 ## Take care to not return `true` more than once!
 func _damage(_amount: int) -> bool:
     return false
-
-## Implement in class. Die. Remember to set alive to false!
-func _die() -> void:
-    pass
 
 ## Instructs the weapon controller to set up combat state
 func enter_combat() -> void:

@@ -112,11 +112,14 @@ func _damage(amount: int) -> bool:
 
     return health <= 0
 
-func _die() -> void:
+func die() -> void:
+    super.die()
+
     if DEBUG_PRINT:
         print("%s gah! I die!" % name)
-    remove_from_group(GROUP.ALIVE)
-    alive = false
+
+    ragdoll()
+    next_impulse = -global_basis.z * 100
 
 func _on_target_lost() -> void:
     if in_combat:

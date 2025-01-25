@@ -258,6 +258,8 @@ func _request_puppet_claim(host: WeaponController) -> bool:
 
     tween.tween_callback(
         func ():
+            if not puppet:
+                return
             puppet.remote_transform_3d.remote_path = get_path()
     )
 

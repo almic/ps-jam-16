@@ -173,19 +173,20 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Billy" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5618, 0.6074, 9.79809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.359, 0, 11.23)
 brain = SubResource("Resource_gg10l")
 
 [node name="Alice" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7425, 0.144819, 13.4877)
+transform = Transform3D(0.355704, 0, 0.934599, 0, 1, 0, -0.934599, 0, 0.355704, -14.7425, 2.1302, 14.151)
 brain = SubResource("Resource_t2iog")
 
 [node name="John" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(-0.000453754, 0, -1, 0, 1, 0, 1, 0, -0.000453754, -3.1764, -3.41061e-13, 0.432753)
+transform = Transform3D(0.00325842, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00325842, -30.5043, 0.232689, 12.4243)
 brain = SubResource("Resource_pn8v0")
 
 [node name="Player" parent="." instance=ExtResource("10_4ck11")]
-transform = Transform3D(0.995497, 0, 0.0947863, 0, 1, 0, -0.0947863, 0, 0.995497, -0.818005, 0.570419, 15.9496)
+unique_name_in_owner = true
+transform = Transform3D(0.99967, 0, -0.0256723, 0, 1, 0, 0.0256723, 0, 0.99967, 0.772625, 0.570418, 12.8115)
 
 [node name="SwordB" parent="." instance=ExtResource("13_omw7m")]
-transform = Transform3D(-0.0113619, -0.999935, 0, 0.999935, -0.0113619, 0, 0, 0, 1, -0.264061, 1.50751, 14.5153)
+transform = Transform3D(-0.17681, -0.984245, 0, 0.984245, -0.17681, 0, 0, 0, 1, -0.238002, 1.3189, 14.5153)

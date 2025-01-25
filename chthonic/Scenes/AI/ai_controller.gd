@@ -8,6 +8,8 @@ const DEBUG_PRINT: bool = true
 
 
 @onready var grab_point: Marker3D = %GrabPoint
+@onready var bone_simulator: PhysicalBoneSimulator3D = %BoneSimulator
+@onready var rigid_capsule: CollisionShape3D = %RigidCapsule
 
 
 @export_range(0.1, 3) var movement_speed: float = 1.3
@@ -26,6 +28,9 @@ const DEBUG_PRINT: bool = true
 
 ## Marks this controller as dead
 var alive: bool = true
+
+## Used to apply an impulse to the root on the next physics frame
+var next_impulse: Vector3
 
 func _ready() -> void:
     add_to_group(GROUP.ALIVE)
@@ -47,6 +52,14 @@ func _physics_process(delta: float) -> void:
         velocity += get_gravity() * delta
     else:
         velocity = Vector3.ZERO
+
+    if next_impulse:
+        # impulse the first two bones, which should be the root and the upper body
+        # At least two bones to ensure reasonable force is applied
+        for i in range(0, 2):
+            var bone := bone_simulator.get_child(i) as PhysicalBone3D
+            bone.apply_central_impulse(next_impulse)
+        next_impulse = Vector3()
 
     if not alive:
         return
@@ -174,6 +187,25 @@ func track_target(delta: float) -> bool:
         _on_arrived()
 
     return true
+
+func die() -> void:
+    alive = false
+    remove_from_group(GROUP.ALIVE)
+
+func ragdoll() -> void:
+    rigid_capsule.disabled = true
+    bone_simulator.active = true
+    bone_simulator.physical_bones_start_simulation()
+
+    # parent anything held to the world so it drops
+    for child in grab_point.get_children():
+        child.reparent(self.get_parent(), true)
+        if child is WeaponItem:
+            # clear weapon controller
+            child.weapon_controller = null
+
+        # Exclude dropped items from interacting with the owner
+        bone_simulator.physical_bones_add_collision_exception(child)
 
 ## Implement in class. Called when seeking out a new target
 func _next_target() -> Node3D:

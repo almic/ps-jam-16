@@ -8,6 +8,7 @@ class_name PuppetAI extends WeaponController
 
 var master: Player
 
+
 ## Steal the children from the host, give them up for my master!
 func _claim(player: Player, host: WeaponController) -> void:
     master = player
@@ -48,6 +49,10 @@ func _physics_process(delta: float) -> void:
     # current velocity prior running the AI input, then add it back
     var current_velocity: Vector3 = velocity
     super._physics_process(delta)
+
+    if not alive:
+        return
+
     velocity += current_velocity
     move_and_slide()
 
@@ -67,10 +72,15 @@ func _should_act() -> bool:
 func _pick_move() -> WeaponMove:
     return master._pick_move()
 
-func _die() -> void:
-    alive = false
+func die() -> void:
+    super.die()
+
     remote_transform_3d.remote_path = ""
     remote_transform_3d.queue_free()
+
+    ragdoll()
+    next_impulse = -global_basis.z * 100
+
     master._on_puppet_died()
 
 func _damage(amount: int) -> bool:
