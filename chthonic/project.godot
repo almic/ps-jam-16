@@ -29,3 +29,7 @@ enabled=PackedStringArray("res://addons/guide/plugin.cfg", "res://addons/terrain
 3d_physics/layer_3="Dynamic Objects"
 3d_physics/layer_4="Characters"
 3d_physics/layer_5="WeaponBlade"
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
