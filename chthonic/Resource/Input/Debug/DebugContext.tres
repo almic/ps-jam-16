@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GUIDEMappingContext" load_steps=18 format=3 uid="uid://c2y6v44ydi8fo"]
+[gd_resource type="Resource" script_class="GUIDEMappingContext" load_steps=23 format=3 uid="uid://c2y6v44ydi8fo"]
 
 [ext_resource type="Script" path="res://addons/guide/guide_action_mapping.gd" id="1_7p0w7"]
 [ext_resource type="Resource" uid="uid://nhhwfcoq6c38" path="res://Resource/Input/Debug/action/enable_debug.tres" id="2_1b6yg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/guide/triggers/guide_trigger.gd" id="6_7r2u4"]
 [ext_resource type="Script" path="res://addons/guide/triggers/guide_trigger_pressed.gd" id="7_hpfmv"]
 [ext_resource type="Resource" uid="uid://bte078mtm5pho" path="res://Resource/Input/Debug/action/toggle_combat.tres" id="8_wc7lv"]
+[ext_resource type="Resource" uid="uid://bk12mlhv2akne" path="res://Resource/Input/Debug/action/kill_all.tres" id="9_3ye1b"]
 
 [sub_resource type="Resource" id="Resource_wtrjk"]
 script = ExtResource("4_fg1iw")
@@ -58,7 +59,31 @@ script = ExtResource("1_7p0w7")
 action = ExtResource("8_wc7lv")
 input_mappings = Array[ExtResource("3_wr56b")]([SubResource("Resource_085lh")])
 
+[sub_resource type="Resource" id="Resource_i77r7"]
+script = ExtResource("4_fg1iw")
+key = 75
+shift = false
+control = true
+alt = false
+meta = false
+allow_additional_modifiers = true
+
+[sub_resource type="Resource" id="Resource_psw5h"]
+script = ExtResource("7_hpfmv")
+actuation_threshold = 0.5
+
+[sub_resource type="Resource" id="Resource_4as0y"]
+script = ExtResource("3_wr56b")
+input = SubResource("Resource_i77r7")
+modifiers = Array[ExtResource("5_jbs3y")]([])
+triggers = Array[ExtResource("6_7r2u4")]([SubResource("Resource_psw5h")])
+
+[sub_resource type="Resource" id="Resource_nr2xw"]
+script = ExtResource("1_7p0w7")
+action = ExtResource("9_3ye1b")
+input_mappings = Array[ExtResource("3_wr56b")]([SubResource("Resource_4as0y")])
+
 [resource]
 script = ExtResource("2_wwxww")
 display_name = ""
-mappings = Array[ExtResource("1_7p0w7")]([SubResource("Resource_u1eek"), SubResource("Resource_dt1vv")])
+mappings = Array[ExtResource("1_7p0w7")]([SubResource("Resource_u1eek"), SubResource("Resource_dt1vv"), SubResource("Resource_nr2xw")])

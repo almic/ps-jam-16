@@ -3,6 +3,8 @@ extends Node3D
 const DEBUG_CONTEXT: GUIDEMappingContext = preload("res://Resource/Input/Debug/DebugContext.tres")
 const ENABLE_DEBUG: GUIDEAction = preload("res://Resource/Input/Debug/action/enable_debug.tres")
 const TOGGLE_COMBAT: GUIDEAction = preload("res://Resource/Input/Debug/action/toggle_combat.tres")
+const KILL_ALL: GUIDEAction = preload("res://Resource/Input/Debug/action/kill_all.tres")
+
 var debug_mode: bool = false
 
 const LivePlayer = preload("res://Scenes/Player/player.gd")
@@ -50,6 +52,9 @@ func _process(_delta: float) -> void:
 
     if TOGGLE_COMBAT.is_triggered():
         get_tree().call_group(GROUP.PLAYER, "toggle_combat")
+
+    if KILL_ALL.is_triggered():
+        get_tree().call_group(GROUP.ALIVE, "die")
 
     if escape.is_triggered():
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
