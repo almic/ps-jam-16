@@ -173,11 +173,11 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Billy" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.359, 0, 11.23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42892, 0, 10.7134)
 brain = SubResource("Resource_gg10l")
 
 [node name="Alice" parent="." instance=ExtResource("12_oc725")]
-transform = Transform3D(0.355704, 0, 0.934599, 0, 1, 0, -0.934599, 0, 0.355704, -14.7425, 2.1302, 14.151)
+transform = Transform3D(0.355704, 0, 0.934599, 0, 1, 0, -0.934599, 0, 0.355704, -10.8129, 2.1302, 13.8543)
 brain = SubResource("Resource_t2iog")
 
 [node name="John" parent="." instance=ExtResource("12_oc725")]

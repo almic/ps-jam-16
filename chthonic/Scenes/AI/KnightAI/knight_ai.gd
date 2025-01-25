@@ -121,6 +121,27 @@ func die() -> void:
     ragdoll()
     next_impulse = -global_basis.z * 100
 
+func enter_combat() -> void:
+    super.enter_combat()
+
+    # NOTE: temporary until we have character animations
+    weapon_obj.reparent(weapon_point, true)
+    var tween := get_tree().create_tween()
+    tween.set_parallel(true)
+    tween.tween_property(weapon_obj, "position", Vector3(), 0.3)
+    tween.tween_property(weapon_obj, "rotation", Vector3(), 0.3)
+
+func exit_combat() -> void:
+    super.exit_combat()
+
+    # NOTE: temporary until we have character animations
+    weapon_obj.reparent(grab_point, true)
+    var tween := get_tree().create_tween()
+    tween.set_parallel(true)
+    tween.tween_property(weapon_obj, "position", Vector3(), 0.3)
+    tween.tween_property(weapon_obj, "rotation", Vector3(), 0.3)
+
+
 func _on_target_lost() -> void:
     if in_combat:
         exit_combat()

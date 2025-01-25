@@ -61,10 +61,24 @@ func enter_combat() -> void:
     if not master.in_combat:
         master.enter_combat()
 
+    # NOTE: temporary until we have character animations
+    remote_transform_3d.reparent(weapon_point, true)
+    var tween := get_tree().create_tween()
+    tween.set_parallel(true)
+    tween.tween_property(remote_transform_3d, "position", Vector3(), 0.3)
+    tween.tween_property(remote_transform_3d, "rotation", Vector3(), 0.3)
+
 func exit_combat() -> void:
     super.exit_combat()
     if master.in_combat:
         master.exit_combat()
+
+    # NOTE: temporary until we have character animations
+    remote_transform_3d.reparent(grab_point, true)
+    var tween := get_tree().create_tween()
+    tween.set_parallel(true)
+    tween.tween_property(remote_transform_3d, "position", Vector3(), 0.3)
+    tween.tween_property(remote_transform_3d, "rotation", Vector3(), 0.3)
 
 func _should_act() -> bool:
     return master._should_act()

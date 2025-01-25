@@ -1,6 +1,10 @@
 @tool
 class_name WeaponController extends AIController
 
+
+@onready var weapon_point: Marker3D = %WeaponPoint
+
+
 ## Health of this weapon controller
 @export var health: int = 100
 
