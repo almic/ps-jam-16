@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GUIDE="*res://addons/guide/guide.gd"
+upgrade="*res://Resource/Upgrade/Upgrade.gd"
 
 [editor_plugins]
 
@@ -29,6 +30,7 @@ enabled=PackedStringArray("res://addons/guide/plugin.cfg", "res://addons/terrain
 3d_physics/layer_3="Dynamic Objects"
 3d_physics/layer_4="Characters"
 3d_physics/layer_5="WeaponBlade"
+3d_physics/layer_6="Static Objects (Tents)"
 
 [physics]
 

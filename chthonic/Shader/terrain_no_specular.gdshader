@@ -9,7 +9,7 @@ render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,skip_vertex_tra
  *
  * Most will only want to customize the material calculation and PBR application in fragment()
  *
- * Uniforms that begin with _ are private and will not display in the inspector. However, 
+ * Uniforms that begin with _ are private and will not display in the inspector. However,
  * you can set them via code. You are welcome to create more of your own hidden uniforms.
  *
  * This system only supports albedo, height, normal, roughness. Most textures don't need the other
@@ -47,7 +47,7 @@ uniform float blend_sharpness : hint_range(0, 1) = 0.87;
 uniform vec3 macro_variation1 : source_color = vec3(1.);
 uniform vec3 macro_variation2 : source_color = vec3(1.);
 
-// Generic noise at 3 scales, which can be used for anything 
+// Generic noise at 3 scales, which can be used for anything
 uniform float noise1_scale : hint_range(0.001, 1.) = 0.04;	// Used for macro variation 1. Scaled up 10x
 uniform float noise1_angle : hint_range(0, 6.283) = 0.;
 uniform vec2 noise1_offset = vec2(0.5);
@@ -170,7 +170,7 @@ float world_noise(vec2 p) {
     int octaves = int( clamp(
 	float(world_noise_max_octaves) - floor(v_vertex_xz_dist/(world_noise_lod_distance)),
     float(world_noise_min_octaves), float(world_noise_max_octaves)) );
-	
+
     for( int i=0; i < octaves; i++ ) {
         vec3 n = noise2D(p);
         d += n.yz;
@@ -232,10 +232,10 @@ void vertex() {
 	bool hole = bool(control >>2u & 0x1u);
 
 	// Show holes to all cameras except mouse camera (on exactly 1 layer)
-	if ( !(CAMERA_VISIBLE_LAYERS == _mouse_layer) && 
+	if ( !(CAMERA_VISIBLE_LAYERS == _mouse_layer) &&
 			(hole || (_background_mode == 0u && (get_region_uv(UV - _region_texel_size) & v_region).z < 0))) {
 		VERTEX.x = 0. / 0.;
-	} else {		
+	} else {
 		// Set final vertex height & calculate vertex normals. 3 lookups.
 		VERTEX.y = get_height(UV2);
 		v_vertex.y = VERTEX.y;
@@ -248,7 +248,7 @@ void vertex() {
 		// mask region edges and use vertex normals only across region boundaries.
 		v_region_border_mask = mod(UV.x + 2.5, _region_size) - fract(UV.x) < 5.0 || mod(UV.y + 2.5, _region_size) - fract(UV.y) < 5.0 ? 1. : 0.;
 	}
-		
+
 	// Transform UVs to local to avoid poor precision during varying interpolation.
 	v_uv_offset = MODEL_MATRIX[3].xz * _vertex_density;
 	UV -= v_uv_offset;
@@ -351,7 +351,7 @@ void get_material(vec2 base_uv, uint control, ivec3 iuv_center, vec3 normal, out
 	out_mat.over = int(control >> 22u & 0x1Fu);
 	out_mat.blend = float(control >>14u & 0xFFu) * 0.003921568627450; // 1./255.0
 
-	// Control map scale & rotation, apply to both base and 
+	// Control map scale & rotation, apply to both base and
 	// uv_center. Translate uv center to the current region.
 	uv_center += _region_locations[region] * _region_size;
 	// Define base scale from control map value as array index. 0.5 as baseline.
@@ -376,7 +376,7 @@ void get_material(vec2 base_uv, uint control, ivec3 iuv_center, vec3 normal, out
 	float normal_angle = uv_rotation;
 	vec2 ddx1 = ddx;
 	vec2 ddy1 = ddy;
-	
+
 	matUV = detiling(base_uv * mat_scale, uv_center * mat_scale, out_mat.base, normal_angle);
 	ddx1 *= mat_scale;
 	ddy1 *= mat_scale;
@@ -400,7 +400,7 @@ void get_material(vec2 base_uv, uint control, ivec3 iuv_center, vec3 normal, out
 	vec4 normal_rg2 = textureGrad(_texture_array_normal, vec3(matUV2, float(out_mat.over)), ddx2, ddy2);
 
 	// Though it would seem having the above lookups in this block, or removing the branch would
-	// be more optimal, the first introduces artifacts #276, and the second is noticably slower. 
+	// be more optimal, the first introduces artifacts #276, and the second is noticably slower.
 	// It seems the branching off dual scaling and the color array lookup is more optimal.
 	if (out_mat.blend > 0.f) {
 		// Unpack & rotate overlay normal for blending
@@ -414,7 +414,7 @@ void get_material(vec2 base_uv, uint control, ivec3 iuv_center, vec3 normal, out
 		albedo_ht = height_blend(albedo_ht, albedo_ht.a, albedo_ht2, albedo_ht2.a, out_mat.blend);
 		normal_rg = height_blend(normal_rg, albedo_ht.a, normal_rg2, albedo_ht2.a, out_mat.blend);
 	}
-	
+
 	// Repack normals and return material
 	normal_rg = pack_normal(normal_rg.xyz, normal_rg.a);
 	out_mat.alb_ht = albedo_ht;
@@ -444,8 +444,8 @@ void fragment() {
 	// Idenfity 4 vertices surrounding this pixel
 	vec2 texel_pos = uv;
 	highp vec2 texel_pos_floor = floor(uv);
-	
-	// Create a cross hatch grid of alternating 0/1 horizontal and vertical stripes 1 unit wide in XY 
+
+	// Create a cross hatch grid of alternating 0/1 horizontal and vertical stripes 1 unit wide in XY
 	vec4 mirror = vec4(fract(texel_pos_floor * 0.5) * 2.0, 1.0, 1.0);
 	// And the opposite grid in ZW
 	mirror.zw = vec2(1.0) - mirror.xy;
@@ -529,4 +529,3 @@ void fragment() {
 	NORMAL_MAP_DEPTH = 1.0;
 
 }
-

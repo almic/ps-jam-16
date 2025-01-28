@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
     if distance_trav >= distance_to_tent:
         spawn_tent()
         distance_trav = 0.0
-        distance_to_tent = random_num(5, 30)#set the range for min and max tent spawns
+        distance_to_tent = random_num(5, 10)#set the range for min and max tent spawns
 
     if ENABLE_DEBUG.is_triggered():
         if debug_mode:
@@ -75,6 +75,9 @@ func spawn_tent():
     var children = tent_spawn_locations.get_children()
     var tent_spawns = children[randi() % children.size()]
     var tent_obj = Tent.instantiate()
-    tent_obj.position.z = player.position.z + random_num(10,20) #set these values to determine how far away the tents can spawn
-    tent_obj.position.x = player.position.x + random_num(30,130)
+    tent_obj.position.z = player.position.z + random_num(10,13) #set these values to determine how far away the tents can spawn
+    tent_obj.position.x = player.position.x + random_num(-15,15)
     add_child(tent_obj)
+
+func tent_touch():
+    print("youre on the door")

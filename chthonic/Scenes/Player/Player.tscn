@@ -17,6 +17,7 @@ radius = 0.3
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_dc3bm")
 move = ExtResource("2_1s10k")
 rotate_camera = ExtResource("3_c3s68")

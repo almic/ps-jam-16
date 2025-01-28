@@ -6,6 +6,7 @@ class_name WeaponItem extends CharacterBody3D
 
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var blade_area: Area3D = %BladeHitArea
+@onready var tent_area: Area3D = %TentDoorArea
 
 
 ## The controller of this weapon
